@@ -1,0 +1,114 @@
+# ============================================================
+# Vanilla RTX Lite - .gitignore
+# Rule of thumb:
+# Ignore local, temporary, generated, or environment-specific files.
+# Do not ignore source files, documentation, curated examples, or release metadata.
+# ============================================================
+
+# ------------------------------------------------------------
+# Operating system files
+# ------------------------------------------------------------
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ------------------------------------------------------------
+# Editor and IDE local settings
+# ------------------------------------------------------------
+# Ignore full editor folders by default because they often contain personal settings.
+# If project-wide settings are needed later, add them intentionally with exceptions.
+.vscode/
+.idea/
+
+# ------------------------------------------------------------
+# Logs and temporary files
+# ------------------------------------------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.old
+
+# ------------------------------------------------------------
+# Local environment files
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ------------------------------------------------------------
+# Build and package outputs
+# ------------------------------------------------------------
+dist/
+build/
+out/
+release/
+releases/
+*.zip
+*.7z
+*.rar
+
+# ------------------------------------------------------------
+# Shader/compiler/generated cache files
+# ------------------------------------------------------------
+.cache/
+shader_cache/
+*.spv
+*.glslc
+
+# ------------------------------------------------------------
+# Minecraft local/runtime folders
+# ------------------------------------------------------------
+# Do not commit local Minecraft instances, game logs, shader cache,
+# local saves, resource packs, or runtime-generated files.
+.minecraft/
+logs/
+crash-reports/
+shaderpacks/
+resourcepacks/
+saves/
+options.txt
+optionsof.txt
+
+# ------------------------------------------------------------
+# Screenshots and recordings policy
+# ------------------------------------------------------------
+# Curated screenshots under examples/ should be committed.
+# Random local captures should go in ignored folders.
+local_screenshots/
+captures/
+recordings/
+
+# ------------------------------------------------------------
+# Tooling caches
+# ------------------------------------------------------------
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# ------------------------------------------------------------
+# Keep curated project files
+# ------------------------------------------------------------
+!README.md
+!ROADMAP.md
+!CHANGELOG.md
+!CONTRIBUTING.md
+!AGENTS.md
+!LICENSE
+!LICENSE-DOCS
+!shader.properties
+!docs/**
+!examples/**
+!tools/**
+!shaders/**
+!.github/**
