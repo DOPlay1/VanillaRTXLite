@@ -1,0 +1,31 @@
+# Normalize text files across operating systems.
+* text=auto
+
+# Markdown and documentation.
+*.md text eol=lf
+*.txt text eol=lf
+
+# Shader source files.
+*.glsl text eol=lf
+*.vsh text eol=lf
+*.fsh text eol=lf
+
+# Shader configuration.
+*.properties text eol=lf
+
+# Scripts.
+*.ps1 text eol=crlf
+*.sh text eol=lf
+
+# Data/config files.
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Images and binary assets.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.zip binary
