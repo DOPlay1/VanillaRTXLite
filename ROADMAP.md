@@ -1,410 +1,564 @@
 # Roadmap — Vanilla RTX Lite
 
-Vanilla RTX Lite uses two progress systems:
+## Project Status
 
-1. **Roadmap levels** for internal engineering progress.
-2. **Release maturity labels** for public stability.
+Current stage:
 
-This keeps technical planning separate from user-facing release expectations.
+```plaintext
+Level 0 — Foundation
+Maturity: Pre-alpha
+Status: Completed, pending main merge/tag
+Suggested milestone: v0.1.0-prealpha
+```
 
----
+Next stage:
 
-## Current Status
-
-- **Roadmap stage:** Level 0 — Foundation
-- **Maturity:** Pre-alpha
-- **Current milestone:** v0.1.0-prealpha — Foundation
-- **v1.0.0 target scope:** Overworld only
-- **Rendering backend:** OpenGL / GLSL through Iris
-
----
-
-## Version and Maturity Strategy
-
-### Roadmap Levels
-
-Roadmap levels describe what part of the project is being built.
-
-They answer:
-
-- What are we working on?
-- What depends on what?
-- What should not be implemented yet?
-- What needs to be validated before moving forward?
-
-### Maturity Labels
-
-Maturity labels describe how stable or usable the project is for users.
-
-They answer:
-
-- Is this safe for public users?
-- Is this only experimental?
-- Is this feature-complete?
-- Is this stable?
+```plaintext
+Level 1 — Baseline Visuals
+Maturity: Pre-alpha
+Suggested milestone: v0.2.0-prealpha
+```
 
 ---
 
-## Suggested Version Mapping
+## 1. Purpose
 
-| Version | Roadmap Level | Maturity | Main Goal |
+This roadmap defines the planned development path for Vanilla RTX Lite.
+
+The project follows a staged roadmap to avoid scope creep, uncontrolled visual experimentation, and unstable releases.
+
+The goal is to build a serious Vanilla+ RTX-like shader with:
+
+- Clear documentation
+- Material-aware rendering
+- Restrained visual direction
+- Honest performance communication
+- Repeatable validation
+- Professional Git and release workflow
+
+---
+
+## 2. Roadmap Philosophy
+
+Vanilla RTX Lite must evolve gradually.
+
+The project should not jump directly into advanced reflections, SSR, atmosphere, or cinematic effects before the foundation is stable.
+
+Each level should produce a coherent, reviewable milestone.
+
+The roadmap prioritizes:
+
+1. Foundation before visuals
+2. Minimal pipeline before advanced effects
+3. Materials before reflections
+4. Debug views before complex rendering
+5. Performance gates before expensive features
+6. Validation before public claims
+
+---
+
+## 3. Versioning Overview
+
+Suggested version mapping:
+
+| Version | Level | Maturity | Purpose |
 | --- | --- | --- | --- |
-| v0.1.0-prealpha | Level 0 — Foundation | Pre-alpha | Repository, documentation, workflow |
-| v0.2.0-prealpha | Level 1 — Baseline Visuals | Pre-alpha | Minimal shader pipeline and debug views |
-| v0.3.0-prealpha | Level 2 — Material Core | Pre-alpha | Material classification, roughness, Fresnel |
-| v0.4.0-alpha | Level 3 — Selective Reflections | Alpha | Water, glass, ice, selective SSR |
-| v0.5.0-alpha | Level 4 — Atmosphere | Alpha | Fog, torch lighting, subtle atmosphere |
-| v0.8.0-beta | Level 5 — Optimization and Release Prep | Beta | Presets, benchmarks, packaging |
-| v1.0.0 | Stable Overworld Release | Stable | Public Overworld-focused release |
+| `v0.1.0-prealpha` | Level 0 — Foundation | Pre-alpha | Repository and documentation foundation |
+| `v0.2.0-prealpha` | Level 1 — Baseline Visuals | Pre-alpha | Minimal shader loading and baseline output |
+| `v0.3.0-prealpha` | Level 2 — Material Core | Pre-alpha | Material classification and core helpers |
+| `v0.4.0-alpha` | Level 3 — Selective Reflections | Alpha | Approved material reflections and controlled SSR |
+| `v0.5.0-alpha` | Level 4 — Atmosphere | Alpha | Fog, torch lighting, subtle atmosphere |
+| `v0.8.0-beta` | Level 5 — Optimization and Release Prep | Beta | Presets, validation, packaging, polish |
+| `v1.0.0-rc.1` | Stable Candidate | Release Candidate | Final Overworld validation |
+| `v1.0.0` | Stable Overworld Release | Stable | First public stable Overworld release |
+
+This mapping may evolve, but major changes should be documented in:
+
+```plaintext
+docs/en/10_architecture_decisions.md
+docs/es/10_decisiones_de_arquitectura.md
+```
 
 ---
 
-# Level 0 — Foundation
+## 4. Level 0 — Foundation
 
-## Maturity
+```plaintext
+Status: Completed
+Maturity: Pre-alpha
+Suggested version: v0.1.0-prealpha
+```
 
-Pre-alpha
+### Goal
 
-## Goal
+Create the professional foundation of the repository before shader implementation begins.
 
-Create the professional foundation of the project before implementing complex shader features.
+### Completed work
 
-This level exists to make sure the repository is understandable, maintainable, and ready for serious development.
+- Repository structure created
+- Root documentation created
+- Licenses added
+- `.gitignore` added
+- `.gitattributes` added
+- GitHub issue templates added
+- Pull request template added
+- `AGENTS.md` added
+- Master project specification added
+- English documentation set completed
+- Spanish documentation set completed
+- Material matrix documented
+- Render pipeline documented
+- Validation scenes documented
+- Performance model documented
+- Compatibility policy documented
+- Git workflow documented
+- Architecture decisions documented
+- Known risks documented
+- Release strategy documented
+- Option registry documented
+- Compatibility matrix documented
+- Release checklist documented
+- Codex task protocol documented
+- Visual baseline manifest documented
+- Level 0 foundation plan updated as closure record
 
-## Deliverables
+### Deliverables
 
-- Repository structure
-- README
-- ROADMAP
-- CHANGELOG
-- CONTRIBUTING
-- AGENTS guide for AI-assisted work
-- Licenses
-- GitHub issue templates
-- Pull request template
-- Documentation skeleton
-- Master project specification
-- Level 0 foundation plan
+```plaintext
+README.md
+ROADMAP.md
+CHANGELOG.md
+CONTRIBUTING.md
+AGENTS.md
+LICENSE
+LICENSE-DOCS
+.gitignore
+.gitattributes
+.github/
+docs/en/
+docs/es/
+examples/
+shaders/
+tools/
+shader.properties
+```
 
-## Required Documentation
+### Notes
 
-- `docs/en/master_project_specification.md`
-- `docs/en/00_project_charter.md`
-- `docs/en/01_vision.md`
-- `docs/en/02_technical_spec.md`
-- `docs/en/03_material_matrix.md`
-- `docs/en/04_render_pipeline.md`
-- `docs/en/05_validation_scenes.md`
-- `docs/en/06_performance_targets.md`
-- `docs/en/07_compatibility.md`
-- `docs/en/08_code_conventions.md`
-- `docs/en/09_git_workflow.md`
-- `docs/en/10_architecture_decisions.md`
-- `docs/en/11_known_risks.md`
-- `docs/en/12_release_strategy.md`
-- `docs/en/13_option_registry.md`
-- `docs/en/14_compatibility_matrix.md`
-- `docs/en/15_release_checklist.md`
-- `docs/en/16_codex_task_protocol.md`
-- `docs/en/17_visual_baseline_manifest.md`
-- `docs/en/18_level_0_foundation_plan.md`
+Level 0 does not represent a gameplay-ready shader release.
 
-Spanish translations will be maintained under `docs/es/`.
-
-## Exit Criteria
-
-Level 0 is complete when:
-
-- The repository structure exists.
-- The main documentation files exist.
-- The README explains the project clearly.
-- The scope of v1.0.0 is defined.
-- The shader philosophy is documented.
-- The Git workflow is documented.
-- The release strategy is documented.
-- Codex/AI collaboration rules are documented.
-- The first pre-alpha foundation commit is created.
-
-## Not Required Yet
-
-Level 0 does not require:
-
-- Complex shader code
-- SSR
-- God rays
-- Advanced fog
-- Material implementation
-- Public user-facing builds
-- Performance claims based on real measurements
+It represents the professional foundation needed to start shader implementation safely.
 
 ---
 
-# Level 1 — Baseline Visuals
+## 5. Level 1 — Baseline Visuals
 
-## Maturity
+```plaintext
+Status: Next
+Maturity: Pre-alpha
+Suggested version: v0.2.0-prealpha
+```
 
-Pre-alpha
+### Goal
 
-## Goal
+Create the minimal shader foundation required to load, render, and validate basic output.
 
-Create the first functional shader baseline.
+Level 1 should focus on getting a simple, understandable shader pipeline running.
 
-This level focuses on proving that the shader can load, render, and expose debug infrastructure before advanced visual effects are introduced.
+### Planned work
 
-## Planned Work
+- Validate `shader.properties`
+- Add minimal shader program files
+- Add basic vertex/fragment pass structure
+- Add minimal final output
+- Add shared constants/includes
+- Add initial color pipeline placeholder
+- Add debug view selector foundation
+- Add initial profile constants
+- Confirm shader loads in the target environment
+- Document tested Minecraft/Iris setup
+- Add first compatibility matrix entries when possible
 
-- Minimal shader program files
-- Basic `shader.properties`
-- Baseline color output
-- Initial exposure control
-- Neutral tonemap foundation
-- Initial debug view switch
-- Basic settings structure
+### Expected files
 
-## Required Debug Views
+Potential files to create or update:
 
-Initial debug view system should prepare for:
+```plaintext
+shader.properties
+shaders/program/final.fsh
+shaders/program/composite.vsh
+shaders/program/composite.fsh
+shaders/include/constants.glsl
+shaders/include/uniforms.glsl
+shaders/lib/color_pipeline.glsl
+shaders/lib/debug_views.glsl
+shaders/profiles/lite.glsl
+shaders/profiles/balanced.glsl
+shaders/profiles/quality.glsl
+shaders/profiles/experimental.glsl
+```
 
-- Material ID/category
-- Reflective mask
-- Roughness
-- Fresnel factor
-- Specular contribution
-- SSR contribution
-- Exposure/luminance
+### Must not include yet
 
-Not all debug views need full data at this stage, but the architecture must allow them.
+Level 1 should not include:
 
-## Exit Criteria
+- Advanced SSR
+- Complex water reflections
+- Full material classification
+- Final atmosphere system
+- Heavy bloom
+- Cinematic grading
+- Vulkan implementation
+- Nether support
+- End support
+
+### Completion criteria
 
 Level 1 is complete when:
 
-- The shader loads in Iris.
-- The project has a minimal stable visual output.
-- Basic debug view infrastructure exists.
-- The color pipeline has a restrained baseline.
-- No advanced reflection feature is required yet.
+- Shader pack loads successfully.
+- Minimal output renders.
+- Basic program structure exists.
+- Shared constants/includes exist.
+- Debug view selector foundation exists.
+- Code follows conventions.
+- No major visual claims are made.
+- Compatibility notes are updated with real tested setup.
 
 ---
 
-# Level 2 — Material Core
+## 6. Level 2 — Material Core
 
-## Maturity
+```plaintext
+Status: Planned
+Maturity: Pre-alpha
+Suggested version: v0.3.0-prealpha
+```
 
-Pre-alpha
+### Goal
 
-## Goal
+Implement the core material logic required before reflections and advanced effects.
 
-Build the foundation of material-aware rendering.
+### Planned work
 
-This level establishes how the shader decides what kind of physical response a surface should have.
+- Define material IDs/constants
+- Add material category helpers
+- Add conservative material fallback logic
+- Add roughness placeholder or helper
+- Add bounded Fresnel helper
+- Add material debug view
+- Add reflective mask debug view
+- Validate matte material protection
+- Start mapping approved materials where pipeline data allows
 
-## Planned Work
+### Focus
 
-- Initial material classification
-- Material matrix implementation plan
-- Roughness model
-- Fresnel utility
-- Base specular response
-- Reflective mask debug view
-- Protection for matte materials
+Level 2 is about material correctness, not spectacle.
 
-## Exit Criteria
+The priority is making sure the shader can distinguish between:
 
-Level 2 is complete when:
+- Reflective materials
+- Semi-reflective/specular materials
+- Polished/glossy materials
+- Crystalline materials
+- Matte materials
 
-- Matte materials remain non-reflective.
-- Reflective candidates are classified separately.
-- Fresnel and roughness are implemented as reusable helpers.
-- Material debug views are functional.
-- The material matrix matches the documented philosophy.
+### Must not include yet
 
----
-
-# Level 3 — Selective Reflections
-
-## Maturity
-
-Alpha
-
-## Goal
-
-Implement selective reflection behavior for approved materials.
-
-This level introduces reflection features while preserving the non-negotiable rule that matte materials must not reflect.
-
-## Planned Work
-
-- Water reflection behavior
-- Glass reflection behavior
-- Ice response
-- Quartz/polished response
-- Initial SSR logic
-- SSR fallback policy
-- Reflection strength controls
-- Reflection debug view
-
-## Exit Criteria
-
-Level 3 is complete when:
-
-- Water, glass, and ice show controlled reflective behavior.
-- Matte terrain does not reflect.
-- SSR artifacts are documented.
-- Reflection behavior is bounded by Fresnel and roughness.
-- Validation scenes for water and glass pass initial review.
+- Full SSR
+- Reflection-heavy visuals
+- Wet terrain systems
+- Unbounded custom material overrides
 
 ---
 
-# Level 4 — Atmosphere
+## 7. Level 3 — Selective Reflections
 
-## Maturity
+```plaintext
+Status: Planned
+Maturity: Alpha
+Suggested version: v0.4.0-alpha
+```
 
-Alpha
+### Goal
 
-## Goal
+Implement controlled reflections for approved materials only.
 
-Add restrained atmospheric improvements without turning the shader into a cinematic showcase.
+### Planned work
 
-## Planned Work
+- Water reflection logic
+- Glass reflection logic
+- Ice reflection logic
+- Reflection gating by material
+- Fresnel-based reflection modulation
+- Roughness-aware reflection response
+- SSR prototype where appropriate
+- SSR fallback behavior
+- Reflection debug views
+- Lite/Balanced/Quality reflection differences
+
+### Required rule
+
+Reflections must remain selective.
+
+Matte materials must not reflect.
+
+Protected matte materials include:
+
+- Dirt
+- Stone
+- Sand
+- Gravel
+- Wood
+- Leaves
+- Rough terrain
+- Most organic surfaces
+
+### Validation focus
+
+Use validation scenes for:
+
+- River or lake
+- Glass transition
+- Ice or snow environment
+- Matte material stress scene
+- Sunset water behavior
+
+---
+
+## 8. Level 4 — Atmosphere
+
+```plaintext
+Status: Planned
+Maturity: Alpha
+Suggested version: v0.5.0-alpha
+```
+
+### Goal
+
+Add restrained atmosphere and lighting improvements without breaking Vanilla identity.
+
+### Planned work
 
 - Subtle fog
-- Torch lighting refinement
-- Sunrise/sunset tone refinement
+- Torch warmth tuning
+- Torch intensity tuning
+- Night readability
+- Cave readability
+- Sunrise/sunset restraint
+- Rain atmosphere foundation
 - Optional subtle god rays
-- Atmosphere settings
-- Cost tier documentation for atmospheric effects
+- Atmosphere quality presets
 
-## Exit Criteria
+### Required rule
 
-Level 4 is complete when:
+Atmosphere must add depth, not drama.
 
-- Fog improves depth without hiding the world.
-- Torch lighting remains warm but not red-heavy or white.
-- God rays, if enabled, remain subtle.
-- Atmosphere does not damage vanilla readability.
-- Validation scenes for caves, night, sunset, and rain pass review.
+It must not:
+
+- Hide gameplay
+- Oversaturate the image
+- Turn the shader cinematic-heavy
+- Make every surface wet or reflective
+- Mask rendering problems
 
 ---
 
-# Level 5 — Optimization and Release Prep
+## 9. Level 5 — Optimization and Release Prep
 
-## Maturity
+```plaintext
+Status: Planned
+Maturity: Beta
+Suggested version: v0.8.0-beta
+```
 
-Beta
+### Goal
 
-## Goal
+Prepare the shader for broader testing and eventual stable Overworld release.
 
-Prepare the project for a serious public release.
-
-## Planned Work
+### Planned work
 
 - Preset tuning
-- Lite/Balanced/Quality validation
-- Experimental isolation
 - Cost tier review
-- Performance notes
+- Performance validation
 - Compatibility matrix updates
+- Validation screenshots
+- Known issue review
 - Packaging scripts
-- Release checklist
-- Screenshots and comparisons
-- Known issues documentation
+- Release ZIP testing
+- Changelog preparation
+- Release checklist execution
+- Public documentation cleanup
 
-## Exit Criteria
+### Required rule
 
-Level 5 is complete when:
+Performance claims must remain honest.
 
-- Presets are usable and documented.
-- The shader can be packaged cleanly.
-- Known issues are documented.
-- Validation scenes have been reviewed.
-- Performance expectations are honest.
-- The project is ready for a release candidate.
+Allowed:
+
+```plaintext
+Validated on RTX 3070 Ti at 1080p.
+Estimated cost: High.
+Performance depends on GPU, resolution, render distance, mods, drivers, and preset.
+```
+
+Forbidden:
+
+```plaintext
+Guaranteed 60 FPS.
+Uses exactly 2 GB VRAM.
+Works perfectly on all GPUs.
+Automatically detects exact GPU usage.
+```
 
 ---
 
-# v1.0.0 — Stable Overworld Release
+## 10. Stable Candidate — v1.0.0-rc.1
 
-## Maturity
+```plaintext
+Status: Planned
+Maturity: Release Candidate
+```
 
-Stable
+### Goal
 
-## Scope
+Prepare the final Overworld-focused stable release candidate.
 
-The first stable release focuses on the Overworld only.
+### Planned work
 
-## Required State
+- Final Overworld validation
+- Preset review
+- Release package verification
+- Known issue review
+- Compatibility notes
+- Changelog finalization
+- GitHub release draft
+- Final screenshots if available
+- No major new features unless critical
 
-- Overworld visual experience is coherent.
-- Material behavior is stable.
-- Presets are documented.
-- Performance cost is communicated honestly.
-- Documentation is complete enough for users and contributors.
-- Known limitations are documented.
-- Release package is tested.
-- GitHub release notes are published.
+### Required rule
 
-## Out of Scope
+Release candidates should focus on fixes and validation, not new feature expansion.
+
+---
+
+## 11. Stable Release — v1.0.0
+
+```plaintext
+Status: Planned
+Maturity: Stable
+```
+
+### Goal
+
+Publish the first stable Overworld-focused release.
+
+### Required scope
+
+`v1.0.0` should include:
+
+- Overworld lighting
+- Controlled exposure
+- Neutral tonemap
+- Material-aware behavior
+- Matte material protection
+- Water behavior
+- Glass behavior
+- Ice behavior
+- Quartz-like subtle polished response
+- Copper differentiation
+- Amethyst subtle response
+- Torch warmth
+- Subtle fog/atmosphere
+- Presets
+- Cost tier communication
+- Release package
+- Documentation
+
+### Out of scope
+
+`v1.0.0` does not include:
 
 - Full Nether support
 - Full End support
-- Built-in updater
-- Exact hardware telemetry
-- Path tracing
 - Real ray tracing
+- Path tracing
+- Vulkan production line
+- Built-in updater
+- Exact GPU usage reporting
+- Exact VRAM usage reporting
+- Universal modpack compatibility
+- Universal resource pack compatibility
 
 ---
 
-# Future Milestones
+## 12. Future Tracks After v1.0.0
 
-These milestones are intentionally outside v1.0.0.
+Potential future tracks:
 
-## Nether Support
+### Nether Support
 
-Possible future focus:
+Future milestone focused on:
 
-- Lava lighting
-- Nether fog
-- Emissive material behavior
-- Basalt/blackstone treatment
 - Nether atmosphere
+- Lava-heavy lighting
+- Basalt/blackstone behavior
+- Nether-specific readability
 
-## End Support
+### End Support
 
-Possible future focus:
+Future milestone focused on:
 
-- End sky atmosphere
-- End stone response
-- Void depth treatment
-- End crystal behavior
+- End sky
+- End stone behavior
+- Void atmosphere
+- End-specific lighting
 
-## Companion Tooling
+### Vulkan-Oriented Track
 
-Possible future tools:
+Future separate technical track.
 
-- Update checker
-- Hardware recommendation assistant
-- Packaging helper
-- Compatibility reporter
+It may reuse:
 
-## Vulkan-Oriented Line
+- Visual philosophy
+- Material rules
+- Validation scenes
+- Cost model
+- Documentation structure
 
-Possible future direction:
+It should not be assumed to reuse the same GLSL/OpenGL implementation directly.
 
-- Reuse visual philosophy
-- Reuse material logic concepts
-- Reuse validation scenes
-- Rebuild technical implementation for Vulkan when ecosystem support is viable
+### Packaging Improvements
+
+Future work may include:
+
+- Automated pack building
+- Release ZIP validation
+- Versioned package naming
+- Cleaner GitHub release workflow
 
 ---
 
-# Roadmap Rule
+## 13. Current Immediate Next Steps
 
-When in doubt, the project must choose:
+After Level 0 closure:
 
-1. Vanilla identity over spectacle
-2. Subtlety over intensity
-3. Physical plausibility over visual gimmicks
-4. Performance over unnecessary complexity
-5. Documentation over improvisation
-6. Honest limitations over inflated promises
+1. Review `README.md`.
+2. Update `CHANGELOG.md`.
+3. Confirm `ROADMAP.md` reflects Level 0 completion.
+4. Merge `dev` into `main`.
+5. Optionally create `v0.1.0-prealpha`.
+6. Start Level 1 with a small shader-loading task.
+
+---
+
+## 14. Roadmap Governance Rule
+
+When uncertain, choose:
+
+1. Foundation before effects
+2. Material correctness before reflections
+3. Debug visibility before complex visuals
+4. Performance gates before expensive features
+5. Validation before public claims
+6. Stable scope over feature excitement
