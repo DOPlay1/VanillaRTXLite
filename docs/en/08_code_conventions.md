@@ -44,13 +44,17 @@ Shader code should follow the repository structure:
 
 ```plaintext
 shaders/
-├── program/
+├── final.fsh
+├── composite.vsh
+├── composite.fsh
+├── gbuffers_*.vsh
+├── gbuffers_*.fsh
 ├── lib/
 ├── include/
 └── profiles/
 ```
 
-### `shaders/program/`
+### `shaders/`
 
 Contains stage entry files.
 
@@ -103,9 +107,9 @@ experimental.glsl
 
 ---
 
-## 4. Program File Rules
+## 4. Runtime Entrypoint File Rules
 
-Program files should be short and focused.
+Runtime entrypoint files should be short and focused.
 
 They may contain:
 
@@ -369,7 +373,7 @@ High roughness should generally reduce or eliminate reflective clarity.
 
 Preset values should live in `shaders/profiles/`.
 
-Program and library files should consume preset values, not define them casually.
+Runtime entrypoint and library files should consume preset values, not define them casually.
 
 Presets should control:
 

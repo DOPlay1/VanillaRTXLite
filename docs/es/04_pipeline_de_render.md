@@ -59,6 +59,26 @@ shaders/profiles/
 
 Los archivos de programa deben orquestar etapas de render, no convertirse en contenedores enormes de lógica no relacionada.
 
+### Regla de entrypoints de runtime
+
+Los entrypoints reales del shader deben vivir directamente bajo `shaders/` para que Iris pueda cargarlos.
+
+Ejemplos:
+
+```plaintext
+shaders/final.fsh
+shaders/composite.vsh
+shaders/composite.fsh
+shaders/gbuffers_terrain.vsh
+shaders/gbuffers_terrain.fsh
+shaders/gbuffers_water.vsh
+shaders/gbuffers_water.fsh
+```
+
+El código reutilizable no debe colocarse directamente en archivos entrypoint de runtime salvo que sea estrictamente específico de esa etapa.
+
+No colocar entrypoints reales de Iris dentro de shaders/program/.
+
 ---
 
 ## 4. Etapa 1 — Gbuffers
@@ -84,10 +104,10 @@ La etapa gbuffer puede manejar:
 Archivos de programa esperados:
 
 ```plaintext
-shaders/program/gbuffers_terrain.vsh
-shaders/program/gbuffers_terrain.fsh
-shaders/program/gbuffers_water.vsh
-shaders/program/gbuffers_water.fsh
+shaders/gbuffers_terrain.vsh
+shaders/gbuffers_terrain.fsh
+shaders/gbuffers_water.vsh
+shaders/gbuffers_water.fsh
 ```
 
 ### Qué pertenece aquí
@@ -141,8 +161,8 @@ La etapa composite puede manejar:
 Archivos de programa esperados:
 
 ```plaintext
-shaders/program/composite.vsh
-shaders/program/composite.fsh
+shaders/composite.vsh
+shaders/composite.fsh
 ```
 
 ### Qué pertenece aquí
@@ -193,7 +213,7 @@ La etapa final puede manejar:
 Archivo de programa esperado:
 
 ```plaintext
-shaders/program/final.fsh
+shaders/final.fsh
 ```
 
 Un archivo `final.vsh` puede añadirse si la implementación lo requiere.

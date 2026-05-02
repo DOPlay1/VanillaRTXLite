@@ -44,13 +44,17 @@ El código shader debe seguir la estructura del repositorio:
 
 ```plaintext
 shaders/
-├── program/
+├── final.fsh
+├── composite.vsh
+├── composite.fsh
+├── gbuffers_*.vsh
+├── gbuffers_*.fsh
 ├── lib/
 ├── include/
 └── profiles/
 ```
 
-### `shaders/program/`
+### `shaders/`
 
 Contiene archivos de entrada por etapa.
 
@@ -103,9 +107,9 @@ experimental.glsl
 
 ---
 
-## 4. Reglas para Archivos de Programa
+## 4. Reglas para Archivos Entrypoint de Runtime
 
-Los archivos de programa deben ser cortos y enfocados.
+Los archivos Entrypoint de Runtime deben ser cortos y enfocados.
 
 Pueden contener:
 

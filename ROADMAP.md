@@ -185,9 +185,9 @@ Potential files to create or update:
 
 ```plaintext
 shader.properties
-shaders/program/final.fsh
-shaders/program/composite.vsh
-shaders/program/composite.fsh
+shaders/final.fsh
+shaders/composite.vsh
+shaders/composite.fsh
 shaders/include/constants.glsl
 shaders/include/uniforms.glsl
 shaders/lib/color_pipeline.glsl

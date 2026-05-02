@@ -57,7 +57,27 @@ Preset tuning must live in:
 shaders/profiles/
 ```
 
-Program files should orchestrate rendering stages, not become large containers of unrelated logic.
+Runtime entrypoint files should orchestrate rendering stages, not become large containers of unrelated logic.
+
+### Runtime entrypoint rule
+
+Runtime shader entrypoints must live directly under `shaders/` so Iris can load them.
+
+Examples:
+
+```plaintext
+shaders/final.fsh
+shaders/composite.vsh
+shaders/composite.fsh
+shaders/gbuffers_terrain.vsh
+shaders/gbuffers_terrain.fsh
+shaders/gbuffers_water.vsh
+shaders/gbuffers_water.fsh
+```
+
+Reusable code must not be placed directly in runtime entrypoint files unless it is strictly stage-specific.
+
+Do not place Iris runtime entrypoints inside shaders/program/.
 
 ---
 
@@ -84,10 +104,10 @@ The gbuffer stage may handle:
 Expected program files:
 
 ```plaintext
-shaders/program/gbuffers_terrain.vsh
-shaders/program/gbuffers_terrain.fsh
-shaders/program/gbuffers_water.vsh
-shaders/program/gbuffers_water.fsh
+shaders/gbuffers_terrain.vsh
+shaders/gbuffers_terrain.fsh
+shaders/gbuffers_water.vsh
+shaders/gbuffers_water.fsh
 ```
 
 ### What belongs here
@@ -141,8 +161,8 @@ The composite stage may handle:
 Expected program files:
 
 ```plaintext
-shaders/program/composite.vsh
-shaders/program/composite.fsh
+shaders/composite.vsh
+shaders/composite.fsh
 ```
 
 ### What belongs here
@@ -193,7 +213,7 @@ The final stage may handle:
 Expected program files:
 
 ```plaintext
-shaders/program/final.fsh
+shaders/final.fsh
 ```
 
 A `final.vsh` file may be added if needed by the implementation.
