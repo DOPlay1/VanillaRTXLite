@@ -230,7 +230,9 @@ Allowed files to modify:
 - shaders/include/constants.glsl if needed
 
 Files that must not be modified:
-- shaders/program/*
+- Runtime entrypoint files directly under shaders/
+- shaders/*.vsh
+- shaders/*.fsh
 - docs/*
 - README.md
 
@@ -239,6 +241,7 @@ Constraints:
 - Do not modify material classification.
 - Do not add SSR.
 - Do not apply Fresnel globally.
+- Do not modify runtime entrypoint files.
 - Helper must be bounded to avoid exaggerated edge glow.
 - Code must be readable and documented.
 
@@ -253,6 +256,7 @@ Validation steps:
 - Review diff.
 - Check naming conventions.
 - Confirm no global reflection logic was introduced.
+- Confirm no runtime entrypoint files were modified.
 
 Expected commit message:
 feat(fresnel): add bounded fresnel helper

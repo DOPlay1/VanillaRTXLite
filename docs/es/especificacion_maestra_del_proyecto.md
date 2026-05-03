@@ -570,7 +570,11 @@ GPUs más potentes deberían rendir mejor en general, pero el rendimiento depend
 ```plaintext
 VanillaRTXLite/
 ├── shaders/
-│   ├── program/
+│   ├── final.fsh
+│   ├── composite.vsh
+│   ├── composite.fsh
+│   ├── gbuffers_*.vsh
+│   ├── gbuffers_*.fsh
 │   ├── lib/
 │   ├── include/
 │   └── profiles/
@@ -584,17 +588,33 @@ VanillaRTXLite/
 ├── README.md
 ├── ROADMAP.md
 ├── CHANGELOG.md
+├── AGENTS.md
 ├── LICENSE
 ├── LICENSE-DOCS
 ├── .gitignore
+├── .gitattributes
 └── CONTRIBUTING.md
 ```
 
 ### 14.2 Arquitectura shader
 
-#### `shaders/program/`
+Los entrypoints reales del shader deben vivir directamente bajo `shaders/` para que Iris pueda cargarlos.
 
-Archivos de entrada para las etapas de render de Iris.
+Ejemplos:
+
+```plaintext
+shaders/final.fsh
+shaders/composite.vsh
+shaders/composite.fsh
+shaders/gbuffers_terrain.vsh
+shaders/gbuffers_terrain.fsh
+shaders/gbuffers_water.vsh
+shaders/gbuffers_water.fsh
+```
+
+Estos archivos deben orquestar etapas de render, no contener grandes cantidades de lógica reutilizable.
+
+No colocar entrypoints reales de Iris dentro de `shaders/program/`.
 
 #### `shaders/lib/`
 

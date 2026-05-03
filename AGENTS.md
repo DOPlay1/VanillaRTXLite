@@ -175,16 +175,31 @@ Performance communication must be useful but honest.
 
 Shader code should remain modular.
 
-Use:
+Runtime shader entrypoints must live directly under `shaders/` so Iris can load them.
+
+Expected runtime entrypoints may include:
 
 ```plaintext
-shaders/program/
+shaders/final.fsh
+shaders/composite.vsh
+shaders/composite.fsh
+shaders/gbuffers_terrain.vsh
+shaders/gbuffers_terrain.fsh
+shaders/gbuffers_water.vsh
+shaders/gbuffers_water.fsh
+```
+
+Use shared support folders for reusable code and configuration:
+
+```plaintext
 shaders/lib/
 shaders/include/
 shaders/profiles/
 ```
 
-Avoid putting large amounts of reusable logic directly inside program entry files.
+Do not place Iris runtime entrypoints inside `shaders/program/`.
+
+Avoid putting large amounts of reusable logic directly inside runtime entrypoint files.
 
 Prefer clear, small, reusable GLSL helpers.
 

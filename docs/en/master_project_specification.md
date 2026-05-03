@@ -559,7 +559,11 @@ More powerful GPUs should generally perform better, but performance depends on:
 ```plaintext
 VanillaRTXLite/
 ├── shaders/
-│   ├── program/
+│   ├── final.fsh
+│   ├── composite.vsh
+│   ├── composite.fsh
+│   ├── gbuffers_*.vsh
+│   ├── gbuffers_*.fsh
 │   ├── lib/
 │   ├── include/
 │   └── profiles/
@@ -573,21 +577,40 @@ VanillaRTXLite/
 ├── README.md
 ├── ROADMAP.md
 ├── CHANGELOG.md
+├── AGENTS.md
 ├── LICENSE
 ├── LICENSE-DOCS
 ├── .gitignore
+├── .gitattributes
 └── CONTRIBUTING.md
 ```
 
 ### 15.2 Shader Architecture
 
-#### `shaders/program/`
-Entry-point shader files for Iris rendering stages.
+Runtime shader entrypoints must live directly under `shaders/` so Iris can load them.
+
+Examples:
+
+```plaintext
+shaders/final.fsh
+shaders/composite.vsh
+shaders/composite.fsh
+shaders/gbuffers_terrain.vsh
+shaders/gbuffers_terrain.fsh
+shaders/gbuffers_water.vsh
+shaders/gbuffers_water.fsh
+```
+
+These files should orchestrate rendering stages, not contain large amounts of reusable logic.
+
+Do not place Iris runtime entrypoints inside `shaders/program/`.
 
 #### `shaders/lib/`
+
 Reusable rendering logic.
 
 Required modules:
+
 - materials
 - material mapping
 - lighting
@@ -602,9 +625,11 @@ Required modules:
 - debug views
 
 #### `shaders/include/`
+
 Shared constants, uniforms, structs, and macros.
 
 #### `shaders/profiles/`
+
 Preset tuning for Lite, Balanced, Quality, and Experimental.
 
 ---

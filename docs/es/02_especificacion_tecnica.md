@@ -105,35 +105,61 @@ Versión recomendada:
 
 ## 5. Arquitectura del Shader en el Repositorio
 
-El código fuente del shader se organiza en cuatro áreas principales:
+El código del shader se organiza en entrypoints de runtime y carpetas compartidas de soporte:
 
 ```plaintext
 shaders/
-├── program/
+├── final.fsh
+├── composite.vsh
+├── composite.fsh
+├── gbuffers_*.vsh
+├── gbuffers_*.fsh
 ├── lib/
 ├── include/
 └── profiles/
 ```
 
-### `shaders/program/`
+Los entrypoints reales del shader deben vivir directamente bajo `shaders/` para que Iris pueda cargarlos.
 
-Contiene archivos de entrada usados por las etapas de render de Iris.
+La lógica reutilizable de render pertenece a:
+
+```plaintext
+shaders/lib/
+```
+
+Las definiciones compartidas pertenecen a:
+
+```plaintext
+shaders/include/
+```
+
+La configuración de presets pertenece a:
+
+```plaintext
+shaders/profiles/
+```
+
+No colocar entrypoints reales de Iris dentro de `shaders/program/`.
+
+### Entrypoints de runtime
+
+Contiene archivos de entrada del shader usados por las etapas de render de Iris.
 
 Archivos esperados:
 
 ```plaintext
-gbuffers_terrain.vsh
-gbuffers_terrain.fsh
-gbuffers_water.vsh
-gbuffers_water.fsh
-composite.vsh
-composite.fsh
-final.fsh
+shaders/gbuffers_terrain.vsh
+shaders/gbuffers_terrain.fsh
+shaders/gbuffers_water.vsh
+shaders/gbuffers_water.fsh
+shaders/composite.vsh
+shaders/composite.fsh
+shaders/final.fsh
 ```
 
-Los archivos de programa deben mantenerse enfocados en orquestar cada etapa.
+Los archivos entrypoint de runtime deben mantenerse enfocados en orquestar etapas de render.
 
-La lógica reutilizable extensa no debe colocarse directamente en los archivos de entrada.
+La lógica reutilizable grande no debe colocarse directamente en archivos entrypoint de runtime.
 
 ### `shaders/lib/`
 
@@ -171,7 +197,7 @@ macros.glsl
 
 ### `shaders/profiles/`
 
-Contiene ajustes específicos por preset.
+Contiene configuración específica por preset.
 
 Archivos planeados:
 

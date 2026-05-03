@@ -69,10 +69,10 @@ It is a documentation and repository foundation milestone.
 - Added `examples/` structure for future screenshots, comparisons, and debug views.
 - Added `tools/` structure for future packaging and validation utilities.
 - Added `shaders/` structure:
-  - `program/`
-  - `lib/`
-  - `include/`
-  - `profiles/`
+  - Runtime entrypoints directly under `shaders/`
+  - `shaders/lib/`
+  - `shaders/include/`
+  - `shaders/profiles/`
 
 ---
 

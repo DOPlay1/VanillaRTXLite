@@ -105,35 +105,61 @@ Latest stable Iris release validated against the currently supported Minecraft l
 
 ## 5. Repository Shader Architecture
 
-The shader source is organized into four main areas:
+The shader source is organized into runtime entrypoints and shared support folders:
 
 ```plaintext
 shaders/
-├── program/
+├── final.fsh
+├── composite.vsh
+├── composite.fsh
+├── gbuffers_*.vsh
+├── gbuffers_*.fsh
 ├── lib/
 ├── include/
 └── profiles/
 ```
 
-### `shaders/program/`
+Runtime shader entrypoints must live directly under `shaders/` so Iris can load them.
+
+Reusable rendering logic belongs in:
+
+```plaintext
+shaders/lib/
+```
+
+Shared definitions belong in:
+
+```plaintext
+shaders/include/
+```
+
+Preset tuning belongs in:
+
+```plaintext
+shaders/profiles/
+```
+
+Do not place Iris runtime entrypoints inside `shaders/program/`.
+
+### Runtime entrypoints
 
 Contains shader entry files used by Iris rendering stages.
 
 Expected files:
 
 ```plaintext
-gbuffers_terrain.vsh
-gbuffers_terrain.fsh
-gbuffers_water.vsh
-gbuffers_water.fsh
-composite.vsh
-composite.fsh
-final.fsh
+shaders/gbuffers_terrain.vsh
+shaders/gbuffers_terrain.fsh
+shaders/gbuffers_water.vsh
+shaders/gbuffers_water.fsh
+shaders/composite.vsh
+shaders/composite.fsh
+shaders/final.fsh
 ```
 
-Program files should remain focused on stage orchestration.
+Runtime entrypoint files should remain focused on stage orchestration.
 
-Large reusable logic should not be placed directly in program entry files.
+Large reusable logic should not be placed directly in runtime entrypoint files.
 
 ### `shaders/lib/`
 
