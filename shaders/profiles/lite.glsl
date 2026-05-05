@@ -1,0 +1,6 @@
+#ifndef VRTX_PROFILE_LITE_GLSL
+#define VRTX_PROFILE_LITE_GLSL
+
+#define VRTX_PROFILE_NAME_LITE 1
+
+#endif

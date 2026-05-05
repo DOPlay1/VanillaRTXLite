@@ -1,0 +1,8 @@
+#ifndef VRTX_CONSTANTS_GLSL
+#define VRTX_CONSTANTS_GLSL
+
+#define VRTX_DEBUG_OFF 0
+
+const float VRTX_EPSILON = 0.0001;
+
+#endif
