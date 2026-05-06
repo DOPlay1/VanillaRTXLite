@@ -140,7 +140,7 @@ docs/es/
 examples/
 shaders/
 tools/
-shader.properties
+shaders/shaders.properties
 ```
 
 ### Notes
@@ -167,7 +167,7 @@ Level 1 should focus on getting a simple, understandable shader pipeline running
 
 ### Planned work
 
-- Validate `shader.properties`
+- Validate `shaders/shaders.properties`
 - Add minimal shader program files
 - Add basic vertex/fragment pass structure
 - Add minimal final output
@@ -184,7 +184,7 @@ Level 1 should focus on getting a simple, understandable shader pipeline running
 Potential files to create or update:
 
 ```plaintext
-shader.properties
+shaders/shaders.properties
 shaders/final.fsh
 shaders/composite.vsh
 shaders/composite.fsh

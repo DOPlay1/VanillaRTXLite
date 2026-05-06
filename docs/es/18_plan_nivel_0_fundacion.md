@@ -106,7 +106,7 @@ LICENSE-DOCS
 AGENTS.md
 .gitattributes
 .gitignore
-shader.properties
+shaders/shaders.properties
 ```
 
 El repositorio está diseñado para soportar:
@@ -484,7 +484,7 @@ El Nivel 1 debería comenzar con carga mínima del shader e infraestructura visu
 Nivel 1 — Baseline Visuals debería enfocarse en:
 
 - Carga mínima del shader
-- `shader.properties` básico
+- `shaders/shaders.properties` básico
 - Archivos mínimos de programa
 - Final pass básico
 - Placeholder inicial del pipeline de color

@@ -412,7 +412,7 @@ The shader pack should eventually be distributed as a clean `.zip`.
 The release package should include:
 
 - Required shader files
-- `shader.properties`
+- `shaders/shaders.properties`
 - Required license notices
 - Minimal user-facing documentation if needed
 

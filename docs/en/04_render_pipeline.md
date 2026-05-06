@@ -607,7 +607,7 @@ The pipeline must be designed to avoid:
 Recommended implementation order for Level 1 and Level 2:
 
 1. Minimal shader loading
-2. Basic `shader.properties`
+2. Basic `shaders/shaders.properties`
 3. Basic final output
 4. Initial color pipeline
 5. Debug view selector

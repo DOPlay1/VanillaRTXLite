@@ -349,7 +349,7 @@ Antes de publicar un shader pack descargable, verificar:
 | El paquete se genera correctamente | Pending |
 | El paquete se instala correctamente | Pending |
 | Archivos shader requeridos incluidos | Pending |
-| `shader.properties` incluido | Pending |
+| `shaders/shaders.properties` incluido | Pending |
 | Avisos de licencia incluidos | Pending |
 | Archivos solo de desarrollo excluidos | Pending |
 | Archivos temporales excluidos | Pending |

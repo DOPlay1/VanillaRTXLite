@@ -607,7 +607,7 @@ El pipeline debe diseñarse para evitar:
 Orden recomendado para Nivel 1 y Nivel 2:
 
 1. Carga mínima del shader
-2. `shader.properties` básico
+2. `shaders/shaders.properties` básico
 3. Salida visual básica
 4. Pipeline inicial de color
 5. Selector de debug views

@@ -14,7 +14,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 
 - Begin Level 1 — Baseline Visuals.
 - Add minimal shader loading structure.
-- Validate initial `shader.properties`.
+- Validate initial `shaders/shaders.properties`.
 - Add minimal shader program files.
 - Add initial shared GLSL includes.
 - Add debug view selector foundation.
@@ -65,7 +65,7 @@ It is a documentation and repository foundation milestone.
   - Feature request
   - Visual regression
 - Added pull request template.
-- Added `shader.properties` placeholder.
+- Added `shaders/shaders.properties` placeholder.
 - Added `examples/` structure for future screenshots, comparisons, and debug views.
 - Added `tools/` structure for future packaging and validation utilities.
 - Added `shaders/` structure:

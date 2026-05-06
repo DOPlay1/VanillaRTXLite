@@ -23,7 +23,7 @@ docs/en/03_material_matrix.md
 docs/en/17_visual_baseline_manifest.md
 ```
 
-Before modifying shader options, presets, user-facing settings, cost tiers, or `shader.properties`, also read:
+Before modifying shader options, presets, user-facing settings, cost tiers, or `shaders/shaders.properties`, also read:
 
 ```plaintext
 docs/en/13_option_registry.md

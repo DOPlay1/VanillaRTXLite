@@ -575,6 +575,7 @@ VanillaRTXLite/
 │   ├── composite.fsh
 │   ├── gbuffers_*.vsh
 │   ├── gbuffers_*.fsh
+│   ├── shaders.properties
 │   ├── lib/
 │   ├── include/
 │   └── profiles/
@@ -584,7 +585,6 @@ VanillaRTXLite/
 ├── examples/
 ├── tools/
 ├── .github/
-├── shader.properties
 ├── README.md
 ├── ROADMAP.md
 ├── CHANGELOG.md

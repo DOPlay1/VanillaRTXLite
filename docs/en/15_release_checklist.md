@@ -349,7 +349,7 @@ Before publishing a downloadable shader pack, verify:
 | Package builds successfully | Pending |
 | Package installs correctly | Pending |
 | Required shader files included | Pending |
-| `shader.properties` included | Pending |
+| `shaders/shaders.properties` included | Pending |
 | License notices included | Pending |
 | Development-only files excluded | Pending |
 | Temporary files excluded | Pending |

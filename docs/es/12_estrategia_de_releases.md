@@ -412,7 +412,7 @@ Eventualmente, el shader pack debe distribuirse como un `.zip` limpio.
 El paquete de release debe incluir:
 
 - Archivos requeridos del shader
-- `shader.properties`
+- `shaders/shaders.properties`
 - Avisos de licencia requeridos
 - Documentación mínima para usuario si aplica
 
