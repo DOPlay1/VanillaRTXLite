@@ -4,9 +4,9 @@ uniform sampler2D colortex0;
 
 varying vec2 texcoord;
 
-#include "/shaders/include/constants.glsl"
-#include "/shaders/lib/color_pipeline.glsl"
-#include "/shaders/lib/debug_views.glsl"
+#include "/include/constants.glsl"
+#include "/lib/color_pipeline.glsl"
+#include "/lib/debug_views.glsl"
 
 void main() {
     vec3 color = texture2D(colortex0, texcoord).rgb;
