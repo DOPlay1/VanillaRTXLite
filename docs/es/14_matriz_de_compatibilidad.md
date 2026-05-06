@@ -248,11 +248,34 @@ Notas:
 
 ## 18. Entradas Iniciales de Validación
 
-Todavía no existen entradas completas de validación de compatibilidad del shader.
+### COMP-001 — Prueba de carga del shader baseline de Nivel 1
 
-El proyecto se encuentra actualmente en fase de fundación documental.
+```plaintext
+ID: COMP-001
+Fecha: 2026-05-06
+Versión del proyecto: Rama baseline de Nivel 1 / pre-v0.2.0-prealpha
+Shader pack: VanillaRTXLite-Level1-Test.zip
+Versión de Minecraft: 1.21.1
+Versión de NeoForge: 21.1.212
+Versión de Iris: 1.8.12-snapshot+mc1.21.1-local
+Versión de Sodium: 0.6.13+mc1.21.1
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 4.6
+Resolución: No registrada
+Preset/Profile: Custom, 0 opciones modificadas
+Dimensión: Overworld
+Escena o prueba: Detección inicial y prueba de carga del shader pack
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: Ligero aumento de brillo frente a Vanilla.
+Notas: El shader apareció en la lista de shaders de Iris, cargó sin pantalla negra, creó pipeline en Overworld y renderizó una imagen similar a Vanilla. No se observaron errores de compilación shader en el log proporcionado.
+```
 
-Las primeras entradas deberían añadirse durante el Nivel 1 o posterior, cuando exista un pipeline mínimo de shader.
+Esta entrada confirma únicamente una prueba inicial de humo para Nivel 1.
+
+No implica soporte estable para Minecraft 1.21.1, versiones anteriores, versiones futuras, modpacks pesados o todo hardware.
 
 ---
 

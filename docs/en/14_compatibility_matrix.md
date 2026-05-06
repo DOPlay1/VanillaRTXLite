@@ -248,11 +248,34 @@ Notes:
 
 ## 18. Initial Validation Entries
 
-No full shader compatibility validation entries exist yet.
+### COMP-001 — Level 1 baseline shader load test
 
-The project is currently in documentation foundation stage.
+```plaintext
+ID: COMP-001
+Date: 2026-05-06
+Project version: Level 1 baseline branch / pre-v0.2.0-prealpha
+Shader pack: VanillaRTXLite-Level1-Test.zip
+Minecraft version: 1.21.1
+NeoForge version: 21.1.212
+Iris version: 1.8.12-snapshot+mc1.21.1-local
+Sodium version: 0.6.13+mc1.21.1
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 4.6
+Resolution: Not recorded
+Preset/Profile: Custom, 0 options changed
+Dimension: Overworld
+Scene or test: Initial shader pack detection and load test
+Result: Pass
+Support level: Experimental
+Known issues: Slight brightness increase compared to Vanilla.
+Notes: Shader appeared in the Iris shader list, loaded without black screen, created an Overworld pipeline, and rendered a Vanilla-like image. No shader compilation errors were observed in the provided log.
+```
 
-First entries should be added during Level 1 or later when a minimal shader pipeline exists.
+This entry confirms an initial Level 1 smoke test only.
+
+It does not imply stable support for Minecraft 1.21.1, older versions, future versions, heavy modpacks, or all hardware.
 
 ---
 

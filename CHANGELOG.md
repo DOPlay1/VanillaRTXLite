@@ -10,6 +10,17 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 
 ## [Unreleased]
 
+### Added
+
+- Recorded first Level 1 shader load test as `COMP-001`.
+- Confirmed the baseline shader pack appears in Iris and loads in an Overworld test environment.
+
+### Known limitations
+
+- The first load test was performed on Minecraft 1.21.1, not yet on the target `26.1.x` line.
+- Slight brightness increase compared to Vanilla was observed.
+- Compatibility remains experimental until more environments are tested.
+
 ### Planned
 
 - Begin Level 1 — Baseline Visuals.
