@@ -313,6 +313,38 @@ El problema de renderizado de ítems en mano debe resolverse antes de considerar
 
 ---
 
+### COMP-003 — Validación del pass mínimo de mano en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-003
+Fecha: 2026-05-06
+Versión del proyecto: Rama baseline de Nivel 1 / pre-v0.2.0-prealpha
+Shader pack: VanillaRTXLite-Level1-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.19.2
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 3.3.0
+Resolución: No registrada
+Preset/Profile: Custom, 0 opciones modificadas
+Dimensión: Overworld
+Escena o prueba: Renderizado de semillas de trigo en mano después de agregar pass mínimo de mano
+Resultado: Pass con limitación visual
+Nivel de soporte: Experimental
+Problemas conocidos: Las semillas de trigo en mano ya no se renderizan casi negras, pero la iluminación del ítem en mano aparece demasiado brillante y sin sombreado correcto.
+Notas: El pass mínimo de mano corrigió el problema crítico de ítem negro observado en COMP-002. Todavía se requiere manejo adicional de iluminación/lightmap/sombras antes de considerar correcto el renderizado de ítems en mano.
+```
+
+Esta entrada confirma que el pass mínimo de mano resuelve el problema de semillas de trigo casi negras en mano.
+
+No implica calidad final de iluminación para ítems en mano.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

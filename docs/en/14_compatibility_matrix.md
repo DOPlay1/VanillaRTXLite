@@ -313,6 +313,38 @@ The handheld item rendering issue must be addressed before Level 1 can be consid
 
 ---
 
+### COMP-003 — Minimal hand rendering pass validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-003
+Date: 2026-05-06
+Project version: Level 1 baseline branch / pre-v0.2.0-prealpha
+Shader pack: VanillaRTXLite-Level1-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.19.2
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 3.3.0
+Resolution: Not recorded
+Preset/Profile: Custom, 0 options changed
+Dimension: Overworld
+Scene or test: Handheld wheat seeds rendering after adding minimal hand pass
+Result: Pass with visual limitation
+Support level: Experimental
+Known issues: Handheld wheat seeds no longer render almost black, but handheld item lighting appears overly bright and lacks proper shadowing.
+Notes: The minimal hand rendering pass corrected the critical black-item issue observed in COMP-002. Further lighting/lightmap/shadow handling is still required before handheld rendering can be considered visually correct.
+```
+
+This entry confirms that the minimal hand pass resolves the black handheld wheat seeds issue.
+
+It does not imply final handheld item lighting quality.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
