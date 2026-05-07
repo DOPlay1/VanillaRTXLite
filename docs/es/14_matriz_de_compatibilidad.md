@@ -345,6 +345,39 @@ No implica calidad final de iluminación para ítems en mano.
 
 ---
 
+### COMP-004 — Validación de debug views baseline en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-004
+Fecha: 2026-05-07
+Versión del proyecto: Rama baseline de Nivel 1 / pre-v0.2.0-prealpha
+Shader pack: VanillaRTXLite-Level1-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.19.2
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 3.3.0
+Resolución: No registrada
+Preset/Profile: Custom, 0 opciones modificadas
+Dimensión: Overworld
+Escena o prueba: Validación manual de modos debug baseline
+Resultado: Pass
+Nivel de soporte: Experimental
+Modos debug probados: VRTX_DEBUG_FINAL_PASS_MARKER y VRTX_DEBUG_UV_GRADIENT
+Problemas conocidos: Los modos debug son internos y todavía no están expuestos mediante opciones de Iris.
+Notas: El marcador de final pass produjo una superposición magenta visible, confirmando que `final.fsh` controla la salida final. El modo de gradiente UV produjo un gradiente de coordenadas en pantalla completa, confirmando que el enrutamiento de debug recibe correctamente coordenadas UV de pantalla.
+```
+
+Esta entrada confirma que el enrutamiento interno de debug views de Nivel 1 funciona.
+
+Los modos debug deben permanecer desactivados por defecto.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:
