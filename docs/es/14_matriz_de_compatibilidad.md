@@ -248,7 +248,7 @@ Notas:
 
 ## 18. Entradas Iniciales de Validación
 
-### COMP-001 — Prueba de carga del shader baseline de Nivel 1
+### COMP-001 — Prueba de carga del shader baseline de Nivel 1 en Minecraft 1.21.1
 
 ```plaintext
 ID: COMP-001
@@ -256,7 +256,7 @@ Fecha: 2026-05-06
 Versión del proyecto: Rama baseline de Nivel 1 / pre-v0.2.0-prealpha
 Shader pack: VanillaRTXLite-Level1-Test.zip
 Versión de Minecraft: 1.21.1
-Versión de NeoForge: 21.1.212
+Loader: NeoForge 21.1.212
 Versión de Iris: 1.8.12-snapshot+mc1.21.1-local
 Versión de Sodium: 0.6.13+mc1.21.1
 Sistema operativo: Windows 11
@@ -276,6 +276,40 @@ Notas: El shader apareció en la lista de shaders de Iris, cargó sin pantalla n
 Esta entrada confirma únicamente una prueba inicial de humo para Nivel 1.
 
 No implica soporte estable para Minecraft 1.21.1, versiones anteriores, versiones futuras, modpacks pesados o todo hardware.
+
+---
+
+### COMP-002 — Prueba de carga del shader baseline de Nivel 1 en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-002
+Fecha: 2026-05-06
+Versión del proyecto: Rama baseline de Nivel 1 / pre-v0.2.0-prealpha
+Shader pack: VanillaRTXLite-Level1-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.19.2
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 3.3.0
+Resolución: No registrada
+Preset/Profile: Custom, 0 opciones modificadas
+Dimensión: Overworld
+Escena o prueba: Detección inicial, prueba de carga del shader pack y revisión de ítem en mano
+Resultado: Pass con problema visual conocido
+Nivel de soporte: Experimental
+Problemas conocidos: Las semillas de trigo en mano se renderizan casi negras cuando el shader está activado.
+Notas: El shader apareció en la lista de shaders de Iris, cargó en la línea objetivo 26.1.x, creó pipeline en Overworld y se activó correctamente. El error NBT/datapack observado previamente parece estar relacionado con la carga/actualización del mundo anterior `RTX Vanilla`, no con la compilación del shader.
+```
+
+Esta entrada confirma que el baseline de Nivel 1 carga en la línea objetivo 26.1.x.
+
+No implica soporte estable todavía.
+
+El problema de renderizado de ítems en mano debe resolverse antes de considerar Nivel 1 visualmente limpio.
 
 ---
 

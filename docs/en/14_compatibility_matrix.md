@@ -248,7 +248,7 @@ Notes:
 
 ## 18. Initial Validation Entries
 
-### COMP-001 — Level 1 baseline shader load test
+### COMP-001 — Level 1 baseline shader load test on Minecraft 1.21.1
 
 ```plaintext
 ID: COMP-001
@@ -256,7 +256,7 @@ Date: 2026-05-06
 Project version: Level 1 baseline branch / pre-v0.2.0-prealpha
 Shader pack: VanillaRTXLite-Level1-Test.zip
 Minecraft version: 1.21.1
-NeoForge version: 21.1.212
+Loader: NeoForge 21.1.212
 Iris version: 1.8.12-snapshot+mc1.21.1-local
 Sodium version: 0.6.13+mc1.21.1
 Operating system: Windows 11
@@ -276,6 +276,40 @@ Notes: Shader appeared in the Iris shader list, loaded without black screen, cre
 This entry confirms an initial Level 1 smoke test only.
 
 It does not imply stable support for Minecraft 1.21.1, older versions, future versions, heavy modpacks, or all hardware.
+
+---
+
+### COMP-002 — Level 1 baseline shader load test on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-002
+Date: 2026-05-06
+Project version: Level 1 baseline branch / pre-v0.2.0-prealpha
+Shader pack: VanillaRTXLite-Level1-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.19.2
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 3.3.0
+Resolution: Not recorded
+Preset/Profile: Custom, 0 options changed
+Dimension: Overworld
+Scene or test: Initial shader pack detection, load test, and handheld item check
+Result: Pass with known visual issue
+Support level: Experimental
+Known issues: Held wheat seeds render almost black when the shader is enabled.
+Notes: Shader appeared in the Iris shader list, loaded on the target 26.1.x line, created an Overworld pipeline, and toggled on successfully. The NBT/datapack error observed earlier appears related to loading/upgrading the old world `RTX Vanilla`, not to shader compilation.
+```
+
+This entry confirms that the Level 1 baseline loads on the target 26.1.x line.
+
+It does not imply stable support yet.
+
+The handheld item rendering issue must be addressed before Level 1 can be considered visually clean.
 
 ---
 
