@@ -12,7 +12,7 @@ void main() {
     vec3 color = texture2D(colortex0, texcoord).rgb;
 
     color = applyBaselineColorPipeline(color);
-    color = applyDebugView(color);
+    color = applyDebugView(color, texcoord);
 
     gl_FragColor = vec4(color, 1.0);
 }
