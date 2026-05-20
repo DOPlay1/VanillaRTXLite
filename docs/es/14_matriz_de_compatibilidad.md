@@ -378,6 +378,38 @@ Los modos debug deben permanecer desactivados por defecto.
 
 ---
 
+### COMP-005 — Validación de lightmap mínimo para mano en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-005
+Fecha: 2026-05-20
+Versión del proyecto: Rama baseline de Nivel 1 / pre-v0.2.0-prealpha
+Shader pack: VanillaRTXLite-Level1-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.19.2
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 3.3.0
+Resolución: No registrada
+Preset/Profile: Custom, 0 opciones modificadas
+Dimensión: Overworld
+Escena o prueba: Renderizado de semillas de trigo en mano después de agregar soporte mínimo de lightmap
+Resultado: Pass con limitación visual restante
+Nivel de soporte: Experimental
+Problemas conocidos: La iluminación del ítem en mano mejoró, pero todavía no es final. Aún no se implementan iluminación material-aware completa, interacción con sombras ni refinamiento adecuado de ítems en mano.
+Notas: El soporte mínimo de lightmap para mano mantiene visibles las semillas de trigo en mano y mejora la apariencia previa demasiado plana/full-bright. Esto confirma progreso frente a COMP-003, pero el renderizado de mano sigue siendo una implementación baseline de Nivel 1.
+```
+
+Esta entrada confirma que el soporte mínimo de lightmap mejora el renderizado de ítems en mano.
+
+No implica calidad final de iluminación para ítems en mano.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

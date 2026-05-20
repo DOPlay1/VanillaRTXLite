@@ -12,7 +12,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 
 ### Added
 
-- Recorded Level 1 baseline shader load tests as `COMP-001`, `COMP-002`, `COMP-003`, and `COMP-004`.
+- Recorded Level 1 baseline shader load tests as `COMP-001`, `COMP-002`, `COMP-003`, `COMP-004`, and `COMP-005`.
 - Confirmed the baseline shader pack appears in Iris and loads in an Overworld test environment.
 - Confirmed baseline shader pack loads on Minecraft 26.1.2 with Iris 1.10.9.
 - Added and validated internal baseline debug view modes for final pass marker and UV gradient output.
@@ -20,12 +20,14 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 ### Fixed
 
 - Added a minimal hand rendering pass to prevent handheld wheat seeds from rendering almost black.
+- Added minimal hand lightmap support to improve handheld item lighting after the initial hand rendering pass.
 
 ### Known limitations
 
 - The first load test was performed on Minecraft `1.21.1`.
 - Slight brightness increase compared to Vanilla was observed in `COMP-001`.
-- Handheld wheat seeds no longer render almost black after the minimal hand pass, but handheld item lighting appears overly bright and lacks proper shadowing.
+- Handheld item lighting is improved after minimal lightmap support, but it is still not final.
+- Full material-aware lighting, shadow interaction, and handheld item refinement are still pending.
 - Compatibility remains experimental.
 - Additional hand/item lighting, lightmap, and shadow handling are required before Level 1 can be considered visually clean.
 - Debug view modes are internal-only and not exposed through Iris shader options yet.

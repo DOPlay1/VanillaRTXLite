@@ -378,6 +378,38 @@ Debug modes must remain disabled by default.
 
 ---
 
+### COMP-005 — Minimal hand lightmap validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-005
+Date: 2026-05-20
+Project version: Level 1 baseline branch / pre-v0.2.0-prealpha
+Shader pack: VanillaRTXLite-Level1-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.19.2
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 3.3.0
+Resolution: Not recorded
+Preset/Profile: Custom, 0 options changed
+Dimension: Overworld
+Scene or test: Handheld wheat seeds rendering after adding minimal hand lightmap support
+Result: Pass with remaining visual limitation
+Support level: Experimental
+Known issues: Handheld item lighting is improved, but still not final. Full material-aware lighting, shadow interaction, and proper handheld item refinement are not implemented yet.
+Notes: The minimal hand lightmap support preserves handheld wheat seeds visibility and improves the previous overly flat/full-bright appearance. This confirms progress over COMP-003, but handheld rendering remains a Level 1 baseline implementation.
+```
+
+This entry confirms that minimal lightmap support improves handheld item rendering.
+
+It does not imply final handheld lighting quality.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
