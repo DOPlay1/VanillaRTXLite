@@ -5,9 +5,7 @@
 #define VRTX_DEBUG_FINAL_PASS_MARKER 1
 #define VRTX_DEBUG_UV_GRADIENT 2
 
-#ifndef VRTX_DEBUG_VIEW
-#define VRTX_DEBUG_VIEW VRTX_DEBUG_OFF
-#endif
+#define VRTX_DEBUG_VIEW 0 // [0 1 2] Debug view mode
 
 const float VRTX_EPSILON = 0.0001;
 

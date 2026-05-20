@@ -826,6 +826,32 @@ Muestra debug views internas del shader como categoría material, reflective mas
 
 ---
 
+### VRTX_DEBUG_VIEW
+
+| Campo | Valor |
+| --- | --- |
+| ID de opción | `VRTX_DEBUG_VIEW` |
+| Categoría | Debug |
+| Tipo | Ciclo entero |
+| Valor por defecto | `0` |
+| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV |
+| Tier de costo | Very Low |
+| Impacto visual | Solo depuración |
+| Dependencias | Enrutamiento de debug en final pass |
+| Estabilidad | Experimental |
+| Visible al usuario | Sí |
+| Restricciones | Debe permanecer apagado por defecto. No debe usarse como modo visual de gameplay. |
+
+Propósito:
+
+`VRTX_DEBUG_VIEW` expone el enrutamiento de debug de Nivel 1 mediante las opciones de shader de Iris.
+
+Está pensado para validar si el final pass controla la salida y si el enrutamiento de coordenadas UV de pantalla funciona.
+
+Esta opción debe permanecer desactivada por defecto.
+
+---
+
 ## 16. Opciones que No Deben Existir
 
 El proyecto debe evitar opciones como:

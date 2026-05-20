@@ -826,6 +826,32 @@ Shows internal shader debug views such as material category, reflective mask, ro
 
 ---
 
+### VRTX_DEBUG_VIEW
+
+| Field | Value |
+| --- | --- |
+| Option ID | `VRTX_DEBUG_VIEW` |
+| Category | Debug |
+| Type | Integer cycle |
+| Default | `0` |
+| Values | `0` Off, `1` Final Pass Marker, `2` UV Gradient |
+| Cost tier | Very Low |
+| Visual impact | Debug-only |
+| Dependencies | Final pass debug routing |
+| Stability | Experimental |
+| User-facing | Yes |
+| Constraints | Must remain Off by default. Must not be used as a gameplay visual mode. |
+
+Purpose:
+
+`VRTX_DEBUG_VIEW` exposes the Level 1 debug routing through Iris shader settings.
+
+It is intended to validate whether the final pass controls output and whether screen-space UV routing works.
+
+This option must remain disabled by default.
+
+---
+
 ## 16. Options That Must Not Exist
 
 The project should avoid options such as:

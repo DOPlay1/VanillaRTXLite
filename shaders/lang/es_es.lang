@@ -1,0 +1,6 @@
+screen.DEBUG=Depuración
+option.VRTX_DEBUG_VIEW=Vista de depuración
+option.VRTX_DEBUG_VIEW.comment=Vista interna de depuración de Nivel 1. Mantener apagada para gameplay normal.
+value.VRTX_DEBUG_VIEW.0=Apagado
+value.VRTX_DEBUG_VIEW.1=Marcador de final pass
+value.VRTX_DEBUG_VIEW.2=Gradiente UV

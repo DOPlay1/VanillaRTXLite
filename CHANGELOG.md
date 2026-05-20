@@ -16,6 +16,8 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Confirmed the baseline shader pack appears in Iris and loads in an Overworld test environment.
 - Confirmed baseline shader pack loads on Minecraft 26.1.2 with Iris 1.10.9.
 - Added and validated internal baseline debug view modes for final pass marker and UV gradient output.
+- Exposed internal Level 1 debug view mode through Iris shader settings.
+- Added English and Spanish labels for the baseline debug view option.
 
 ### Fixed
 
@@ -30,7 +32,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Full material-aware lighting, shadow interaction, and handheld item refinement are still pending.
 - Compatibility remains experimental.
 - Additional hand/item lighting, lightmap, and shadow handling are required before Level 1 can be considered visually clean.
-- Debug view modes are internal-only and not exposed through Iris shader options yet.
+- Debug view modes are exposed for validation only and are not intended for normal gameplay.
 
 ### Planned
 
