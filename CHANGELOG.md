@@ -12,12 +12,13 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 
 ### Added
 
-- Recorded Level 1 baseline shader load tests as `COMP-001`, `COMP-002`, `COMP-003`, `COMP-004`, and `COMP-005`.
+- Recorded Level 1 baseline shader load tests as `COMP-001`, `COMP-002`, `COMP-003`, `COMP-004`, `COMP-005`, and `COMP-006`.
 - Confirmed the baseline shader pack appears in Iris and loads in an Overworld test environment.
 - Confirmed baseline shader pack loads on Minecraft 26.1.2 with Iris 1.10.9.
 - Added and validated internal baseline debug view modes for final pass marker and UV gradient output.
 - Exposed internal Level 1 debug view mode through Iris shader settings.
 - Added English and Spanish labels for the baseline debug view option.
+- Validated Iris shader settings integration for the baseline debug view option.
 
 ### Fixed
 

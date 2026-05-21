@@ -410,6 +410,39 @@ No implica calidad final de iluminación para ítems en mano.
 
 ---
 
+### COMP-006 — Validación de opción debug en Iris sobre Minecraft 26.1.2
+
+```plaintext
+ID: COMP-006
+Fecha: 2026-05-20
+Versión del proyecto: Rama baseline de Nivel 1 / pre-v0.2.0-prealpha
+Shader pack: VanillaRTXLite-Level1-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.19.2
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 3.3.0
+Resolución: No registrada
+Preset/Profile: Custom, 0 opciones modificadas
+Dimensión: Overworld
+Escena o prueba: Validación de opción de shader en Iris para debug view baseline
+Resultado: Pass
+Nivel de soporte: Experimental
+Modos debug probados: Apagado, Marcador de final pass, Gradiente UV
+Problemas conocidos: Los debug views están pensados solo para validación y no son modos visuales de gameplay.
+Notas: La opción baseline de debug view apareció en las opciones de shader de Iris y permitió alternar correctamente entre salida normal, superposición de marcador de final pass y salida de gradiente UV. Esto confirma que la ruta de opciones del shader, las etiquetas de idioma, el registro de opciones y el enrutamiento de debug en final pass funcionan en conjunto.
+```
+
+Esta entrada confirma que la opción debug view de Nivel 1 está expuesta y funcional mediante las opciones de shader de Iris.
+
+Los modos debug deben permanecer apagados para gameplay normal.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:
