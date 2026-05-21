@@ -37,13 +37,107 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 
 ### Planned
 
-- Begin Level 1 — Baseline Visuals.
-- Add minimal shader loading structure.
-- Validate initial `shaders/shaders.properties`.
-- Add minimal shader program files.
-- Add initial shared GLSL includes.
-- Add debug view selector foundation.
-- Add first real compatibility validation entries when shader loading begins.
+- Begin Level 2 — Material Core.
+- Add material constants and category helpers.
+- Add conservative material classification placeholders.
+- Add material and reflective mask debug views.
+- Add bounded Fresnel helper.
+- Add roughness placeholder logic.
+
+---
+
+## [v0.2.0-prealpha] — Level 1 Baseline Visuals
+
+### Maturity
+
+```plaintext
+Pre-alpha
+```
+
+### Roadmap level
+
+```plaintext
+Level 1 — Baseline Visuals
+```
+
+### Summary
+
+This milestone establishes the first working shader baseline for Vanilla RTX Lite.
+
+It confirms that the shader pack is detected by Iris, loads on the target 26.1.x line, renders through a minimal final pass, supports a minimal hand rendering pass, includes baseline debug view routing, and exposes the debug view option through Iris shader settings.
+
+This version is still not a stable gameplay-ready shader release.
+
+---
+
+### Added
+
+- Added minimal baseline shader structure.
+- Added `shaders/shaders.properties`.
+- Added `shaders/final.vsh`.
+- Added `shaders/final.fsh`.
+- Added `shaders/include/constants.glsl`.
+- Added `shaders/lib/color_pipeline.glsl`.
+- Added `shaders/lib/debug_views.glsl`.
+- Added placeholder profile files:
+  - `shaders/profiles/lite.glsl`
+  - `shaders/profiles/balanced.glsl`
+  - `shaders/profiles/quality.glsl`
+  - `shaders/profiles/experimental.glsl`
+- Added minimal hand rendering pass:
+  - `shaders/gbuffers_hand.vsh`
+  - `shaders/gbuffers_hand.fsh`
+- Added minimal hand lightmap support.
+- Added baseline debug modes:
+  - Off
+  - Final Pass Marker
+  - UV Gradient
+- Exposed baseline debug view mode through Iris shader settings.
+- Added English and Spanish labels for the baseline debug view option.
+- Recorded Level 1 compatibility/validation entries:
+  - `COMP-001`
+  - `COMP-002`
+  - `COMP-003`
+  - `COMP-004`
+  - `COMP-005`
+  - `COMP-006`
+
+---
+
+### Fixed
+
+- Corrected runtime shader entrypoint documentation.
+- Corrected shader include paths.
+- Moved shader pack configuration from root `shader.properties` to `shaders/shaders.properties`.
+- Added a minimal hand rendering pass to prevent handheld wheat seeds from rendering almost black.
+- Added minimal hand lightmap support to improve handheld item lighting.
+
+---
+
+### Validation
+
+- Confirmed shader pack appears in Iris shader list.
+- Confirmed shader pack loads on Minecraft `1.21.1`.
+- Confirmed shader pack loads on Minecraft `26.1.2`.
+- Confirmed Overworld pipeline creation.
+- Confirmed `final.fsh` controls final output.
+- Confirmed UV debug routing works.
+- Confirmed Iris shader settings integration for baseline debug view option.
+- Confirmed handheld wheat seeds no longer render almost black after hand pass/lightmap work.
+
+---
+
+### Known limitations
+
+- Compatibility remains experimental.
+- Visual output remains baseline-level.
+- Material-aware rendering is not implemented yet.
+- Reflections are not implemented yet.
+- Atmosphere is not implemented yet.
+- Handheld item lighting is improved but not final.
+- Full material-aware lighting, shadow interaction, and handheld item refinement are still pending.
+- Debug view modes are exposed for validation only and are not intended for normal gameplay.
+- No stable release package has been published yet.
 
 ---
 

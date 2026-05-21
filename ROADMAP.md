@@ -5,10 +5,10 @@
 Current stage:
 
 ```plaintext
-Level 0 — Foundation
+Level 1 — Baseline Visuals
 Maturity: Pre-alpha
 Status: Completed, pending main merge/tag
-Suggested milestone: v0.1.0-prealpha
+Suggested milestone: v0.2.0-prealpha
 ```
 
 Next stage:
@@ -154,7 +154,7 @@ It represents the professional foundation needed to start shader implementation 
 ## 5. Level 1 — Baseline Visuals
 
 ```plaintext
-Status: Next
+Status: Completed
 Maturity: Pre-alpha
 Suggested version: v0.2.0-prealpha
 ```
@@ -178,6 +178,33 @@ Level 1 should focus on getting a simple, understandable shader pipeline running
 - Confirm shader loads in the target environment
 - Document tested Minecraft/Iris setup
 - Add first compatibility matrix entries when possible
+
+### Completed work
+
+- Added minimal baseline shader structure.
+- Added `shaders/shaders.properties`.
+- Added `final.vsh` and `final.fsh`.
+- Added shared constants include.
+- Added baseline color pipeline placeholder.
+- Added internal debug view routing.
+- Added profile placeholder files.
+- Corrected shader include paths.
+- Added minimal hand rendering pass.
+- Added minimal hand lightmap support.
+- Exposed baseline debug view option through Iris shader settings.
+- Added English and Spanish labels for debug view option.
+- Validated shader loading on Minecraft `1.21.1`.
+- Validated shader loading on Minecraft `26.1.2`.
+- Recorded compatibility entries `COMP-001` through `COMP-006`.
+
+### Remaining limitations
+
+- Visual output remains baseline-level.
+- Handheld item lighting is improved but not final.
+- Material-aware rendering is not implemented yet.
+- Reflection logic is not implemented yet.
+- Debug views are for validation only.
+- Compatibility remains experimental.
 
 ### Expected files
 
@@ -541,14 +568,14 @@ Future work may include:
 
 ## 13. Current Immediate Next Steps
 
-After Level 0 closure:
+After Level 1 closure:
 
-1. Review `README.md`.
-2. Update `CHANGELOG.md`.
-3. Confirm `ROADMAP.md` reflects Level 0 completion.
-4. Merge `dev` into `main`.
-5. Optionally create `v0.1.0-prealpha`.
-6. Start Level 1 with a small shader-loading task.
+1. Merge `dev` into `main`.
+2. Create tag `v0.2.0-prealpha`.
+3. Start Level 2 — Material Core.
+4. Add material constants and category helpers.
+5. Add material debug views.
+6. Begin conservative material classification.
 
 ---
 

@@ -2,10 +2,10 @@
 
 > A Vanilla+ RTX-like shader for Minecraft Java Edition using Iris/GLSL.
 
-**Current status:** Pre-alpha — Level 0 foundation completed  
-**Current roadmap stage:** Level 0 — Foundation  
-**Next roadmap stage:** Level 1 — Baseline Visuals  
-**Suggested milestone:** v0.1.0-prealpha  
+**Current status:** Pre-alpha — Level 1 baseline visuals completed  
+**Current roadmap stage:** Level 1 — Baseline Visuals  
+**Next roadmap stage:** Level 2 — Material Core  
+**Suggested milestone:** v0.2.0-prealpha  
 **Target Minecraft line:** 26.1.x  
 **Rendering backend:** OpenGL / GLSL via Iris  
 **v1.0.0 scope:** Overworld only  
@@ -114,10 +114,10 @@ This project uses two progress systems:
 Current stage:
 
 ```plaintext
-Level 0 — Foundation
+Level 1 — Baseline Visuals
 Maturity: Pre-alpha
 Status: Completed, pending main merge/tag
-Suggested milestone: v0.1.0-prealpha
+Suggested milestone: v0.2.0-prealpha
 ```
 
 Current mapping:
@@ -241,10 +241,10 @@ Este proyecto usa dos sistemas de progreso:
 Etapa actual:
 
 ```plaintext
-Nivel 0 — Fundación
+Nivel 1 — Visual base
 Madurez: Pre-alpha
 Estado: Completado, pendiente de merge a main/tag
-Hito sugerido: v0.1.0-prealpha
+Hito sugerido: v0.2.0-prealpha
 ```
 
 Siguiente etapa:
