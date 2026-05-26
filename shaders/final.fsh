@@ -5,6 +5,7 @@ uniform sampler2D colortex0;
 varying vec2 texcoord;
 
 #include "/include/constants.glsl"
+#include "/lib/materials.glsl"
 #include "/lib/color_pipeline.glsl"
 #include "/lib/debug_views.glsl"
 
