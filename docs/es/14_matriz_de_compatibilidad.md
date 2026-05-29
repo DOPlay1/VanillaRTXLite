@@ -443,6 +443,38 @@ Los modos debug deben permanecer apagados para gameplay normal.
 
 ---
 
+### COMP-007 — Validación de compilación del núcleo material en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-007
+Fecha: 2026-05-20
+Versión del proyecto: Rama núcleo material de Nivel 2 / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.19.2
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 3.3.0
+Resolución: No registrada
+Preset/Profile: Custom, 0 opciones modificadas
+Dimensión: Overworld
+Escena o prueba: Validación de compilación de constantes de categoría material y helper material
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: La clasificación material todavía no está conectada a datos reales de bloques/materiales.
+Notas: El shader pack cargó correctamente después de agregar constantes de categorías materiales, IDs materiales, funciones base de helper material y el include de `materials.glsl`. No se esperaba ni se observó cambio visual.
+```
+
+Esta entrada confirma que el helper inicial del núcleo material de Nivel 2 compila correctamente.
+
+No implica clasificación material final ni render material-aware todavía.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

@@ -19,6 +19,11 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Exposed internal Level 1 debug view mode through Iris shader settings.
 - Added English and Spanish labels for the baseline debug view option.
 - Validated Iris shader settings integration for the baseline debug view option.
+- Began Level 2 — Material Core.
+- Added material category constants and initial material IDs.
+- Added `shaders/lib/materials.glsl` with conservative material category helpers.
+- Added base roughness helper for planned material-aware rendering.
+- Recorded material core compile validation as `COMP-007`.
 
 ### Fixed
 
@@ -34,6 +39,9 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Compatibility remains experimental.
 - Additional hand/item lighting, lightmap, and shadow handling are required before Level 1 can be considered visually clean.
 - Debug view modes are exposed for validation only and are not intended for normal gameplay.
+- Material classification is not connected to real block/material data yet.
+- Material-aware rendering is not implemented yet.
+- Reflection logic is not implemented yet.
 
 ### Planned
 

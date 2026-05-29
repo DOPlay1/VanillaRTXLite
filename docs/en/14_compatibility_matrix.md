@@ -443,6 +443,38 @@ Debug modes must remain Off for normal gameplay.
 
 ---
 
+### COMP-007 — Material core compile validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-007
+Date: 2026-05-20
+Project version: Level 2 material core branch / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.19.2
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU
+Driver: NVIDIA 596.36
+OpenGL: 3.3.0
+Resolution: Not recorded
+Preset/Profile: Custom, 0 options changed
+Dimension: Overworld
+Scene or test: Material category constants and material helper compile validation
+Result: Pass
+Support level: Experimental
+Known issues: Material classification is not connected to real block/material data yet.
+Notes: Shader pack loaded successfully after adding material category constants, material IDs, base material helper functions, and the `materials.glsl` include path. No visual change was expected or observed.
+```
+
+This entry confirms that the initial Level 2 material core helper compiles successfully.
+
+It does not imply final material classification or material-aware rendering yet.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
