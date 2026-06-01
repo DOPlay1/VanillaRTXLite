@@ -834,7 +834,7 @@ Shows internal shader debug views such as material category, reflective mask, ro
 | Category | Debug |
 | Type | Integer cycle |
 | Default | `0` |
-| Values | `0` Off, `1` Final Pass Marker, `2` UV Gradient |
+| Values | `0` Off, `1` Final Pass Marker, `2` UV Gradient, `3` Material Category |
 | Cost tier | Very Low |
 | Visual impact | Debug-only |
 | Dependencies | Final pass debug routing |
@@ -849,6 +849,8 @@ Purpose:
 It is intended to validate whether the final pass controls output and whether screen-space UV routing works.
 
 This option must remain disabled by default.
+
+The Material Category mode is currently a Level 2 placeholder and only displays the category of the material ID provided by the current pipeline. Real block/material classification is not connected yet.
 
 ---
 

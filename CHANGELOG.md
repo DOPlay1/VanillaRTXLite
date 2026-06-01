@@ -24,6 +24,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Added `shaders/lib/materials.glsl` with conservative material category helpers.
 - Added base roughness helper for planned material-aware rendering.
 - Recorded material core compile validation as `COMP-007`.
+- Added internal material category debug view mode as a Level 2 placeholder.
 
 ### Fixed
 
@@ -42,6 +43,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Material classification is not connected to real block/material data yet.
 - Material-aware rendering is not implemented yet.
 - Reflection logic is not implemented yet.
+- Material category debug view currently uses placeholder material IDs until real block/material classification is connected.
 
 ### Planned
 

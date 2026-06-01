@@ -12,8 +12,10 @@ varying vec2 texcoord;
 void main() {
     vec3 color = texture2D(colortex0, texcoord).rgb;
 
+    int materialId = VRTX_MATERIAL_UNKNOWN;
+
     color = applyBaselineColorPipeline(color);
-    color = applyDebugView(color, texcoord);
+    color = applyDebugView(color, texcoord, materialId);
 
     gl_FragColor = vec4(color, 1.0);
 }

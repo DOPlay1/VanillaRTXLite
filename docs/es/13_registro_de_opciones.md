@@ -834,7 +834,7 @@ Muestra debug views internas del shader como categoría material, reflective mas
 | Categoría | Debug |
 | Tipo | Ciclo entero |
 | Valor por defecto | `0` |
-| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV |
+| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV, `3` Categoría material |
 | Tier de costo | Very Low |
 | Impacto visual | Solo depuración |
 | Dependencias | Enrutamiento de debug en final pass |
@@ -849,6 +849,8 @@ Propósito:
 Está pensado para validar si el final pass controla la salida y si el enrutamiento de coordenadas UV de pantalla funciona.
 
 Esta opción debe permanecer desactivada por defecto.
+
+El modo Categoría material actualmente es un placeholder de Nivel 2 y solo muestra la categoría del ID material entregado por el pipeline actual. La clasificación real de bloques/materiales todavía no está conectada.
 
 ---
 

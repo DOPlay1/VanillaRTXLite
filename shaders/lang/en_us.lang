@@ -4,3 +4,4 @@ option.VRTX_DEBUG_VIEW.comment=Internal Level 1 debug view. Keep Off for normal 
 value.VRTX_DEBUG_VIEW.0=Off
 value.VRTX_DEBUG_VIEW.1=Final Pass Marker
 value.VRTX_DEBUG_VIEW.2=UV Gradient
+value.VRTX_DEBUG_VIEW.3=Material Category
