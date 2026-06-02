@@ -475,6 +475,39 @@ No implica clasificación material final ni render material-aware todavía.
 
 ---
 
+### COMP-008 — Validación de la vista de categoría material en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-008
+Fecha: 2026-08-02
+Versión del proyecto: Rama núcleo material de Nivel 2 / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, 1 opción modificada
+Dimensión: Overworld
+Escena o prueba: Enrutamiento de la vista de Categoría Material y fallback seguro para material desconocido
+Resultado: Pass
+Nivel de soporte: Experimental
+Modos debug probados: Apagado, Categoría Material
+Problemas conocidos: La clasificación real de bloques/materiales todavía no está conectada, por lo que el ID material actual permanece como Unknown y produce una salida debug uniforme casi negra.
+Notas: El shader pack cargó sin errores de compilación del shader. Categoría Material produjo la salida uniforme esperada para la categoría Unknown y al volver Debug View a Apagado se restauró la salida normal. El latest.log de Minecraft confirmó creaciones repetidas y exitosas del pipeline con el paquete de prueba activo.
+```
+
+Esta entrada confirma que la ruta debug de categoría material de Nivel 2 está expuesta, compila y conserva el fallback conservador para material desconocido.
+
+No implica todavía clasificación material por bloque.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:
