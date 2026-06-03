@@ -283,6 +283,31 @@ perf(ssr): reduce sample count for Lite preset
 chore(lint): normalize trailing newlines
 ```
 
+### Bilingual commit messages
+
+Commit subjects must be written in English. When a commit body is needed, it must describe the change in both languages:
+
+```plaintext
+type(scope): short English description
+
+EN:
+- English description of the change.
+
+ES:
+- Descripción del cambio en español.
+```
+
+### Historical recovery timeline
+
+During the current project recovery period:
+
+- The first new commit after `361864f` is dated `2026-06-02`.
+- Each coherent, non-empty commit advances the reconstructed timeline by one calendar day.
+- Author and committer dates must match and use the `America/Bogota` time zone.
+- Empty or filler commits must not be created to occupy dates.
+- Actual test and validation dates written in documentation must remain truthful.
+- Once the reconstructed timeline reaches the current date, commits use their real creation date; multiple commits on the same real day are allowed.
+
 ---
 
 ## 14. Commit Principles

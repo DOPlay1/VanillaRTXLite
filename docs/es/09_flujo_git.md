@@ -283,6 +283,31 @@ perf(ssr): reduce sample count for Lite preset
 chore(lint): normalize trailing newlines
 ```
 
+### Mensajes de commit bilingües
+
+Los títulos de commit deben escribirse en inglés. Cuando un commit necesite cuerpo, debe describir el cambio en ambos idiomas:
+
+```plaintext
+type(scope): short English description
+
+EN:
+- English description of the change.
+
+ES:
+- Descripción del cambio en español.
+```
+
+### Cronología de recuperación histórica
+
+Durante el periodo actual de recuperación del proyecto:
+
+- El primer commit nuevo después de `361864f` tiene fecha `2026-06-02`.
+- Cada commit coherente y no vacío avanza la cronología reconstruida un día calendario.
+- Las fechas de autor y committer deben coincidir y usar la zona horaria `America/Bogota`.
+- No se deben crear commits vacíos o de relleno para ocupar fechas.
+- Las fechas reales de pruebas y validaciones escritas en la documentación deben mantenerse verídicas.
+- Cuando la cronología reconstruida alcance la fecha actual, los commits usarán su fecha real; se permiten varios commits en el mismo día real.
+
 ---
 
 ## 14. Principios de Commit

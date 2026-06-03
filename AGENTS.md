@@ -293,6 +293,18 @@ feat(shader): add material debug view
 perf(ssr): reduce sample count for Lite preset
 ```
 
+Commit subjects must be written in English. Commit bodies must use this bilingual structure when a body is needed:
+
+```plaintext
+EN:
+- English description.
+
+ES:
+- Descripción en español.
+```
+
+During the current historical recovery period, coherent non-empty commits advance one calendar day at a time starting on `2026-06-02`, with matching author and committer dates in the `America/Bogota` time zone. Actual validation dates recorded in project documentation must remain truthful. Once the reconstructed timeline reaches the current date, commits use their real creation date.
+
 Do not commit generated release archives, local Minecraft folders, screenshots not curated for the project, or personal IDE settings.
 
 ---
