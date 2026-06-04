@@ -31,6 +31,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 
 - Added a minimal hand rendering pass to prevent handheld wheat seeds from rendering almost black.
 - Added minimal hand lightmap support to improve handheld item lighting after the initial hand rendering pass.
+- Aligned material base roughness defaults with the canonical material matrix.
 
 ### Known limitations
 

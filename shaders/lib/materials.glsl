@@ -60,36 +60,59 @@ bool materialAllowsReflection(int materialId) {
 }
 
 float getMaterialBaseRoughness(int materialId) {
-    if (isProtectedMatteMaterial(materialId)) {
-        return 1.0;
+    if (materialId == VRTX_MATERIAL_DIRT_MATTE) {
+        return 0.85;
+    }
+
+    if (materialId == VRTX_MATERIAL_STONE_MATTE) {
+        return 0.78;
+    }
+
+    if (
+        materialId == VRTX_MATERIAL_SAND_MATTE ||
+        materialId == VRTX_MATERIAL_GRAVEL_MATTE
+    ) {
+        return 0.88;
+    }
+
+    if (materialId == VRTX_MATERIAL_WOOD_MATTE) {
+        return 0.70;
+    }
+
+    if (materialId == VRTX_MATERIAL_LEAVES_MATTE) {
+        return 0.80;
+    }
+
+    if (materialId == VRTX_MATERIAL_ROUGH_TERRAIN_MATTE) {
+        return 0.85;
     }
 
     if (materialId == VRTX_MATERIAL_WATER) {
-        return 0.08;
-    }
-
-    if (materialId == VRTX_MATERIAL_GLASS) {
-        return 0.04;
-    }
-
-    if (materialId == VRTX_MATERIAL_TINTED_GLASS) {
-        return 0.12;
-    }
-
-    if (materialId == VRTX_MATERIAL_ICE) {
         return 0.18;
     }
 
+    if (materialId == VRTX_MATERIAL_GLASS) {
+        return 0.08;
+    }
+
+    if (materialId == VRTX_MATERIAL_TINTED_GLASS) {
+        return 0.10;
+    }
+
+    if (materialId == VRTX_MATERIAL_ICE) {
+        return 0.20;
+    }
+
     if (materialId == VRTX_MATERIAL_COPPER_FRESH) {
-        return 0.35;
+        return 0.32;
     }
 
     if (materialId == VRTX_MATERIAL_COPPER_OXIDIZED) {
-        return 0.75;
+        return 0.55;
     }
 
     if (materialId == VRTX_MATERIAL_AMETHYST) {
-        return 0.28;
+        return 0.22;
     }
 
     // Conservative fallback: unknown materials should behave closer to matte.
