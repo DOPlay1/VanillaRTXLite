@@ -26,6 +26,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Recorded material core compile validation as `COMP-007`.
 - Added internal material category debug view mode as a Level 2 placeholder.
 - Recorded material category debug view validation as `COMP-008`.
+- Added internal reflective mask debug view mode with a conservative non-reflective fallback.
 
 ### Fixed
 

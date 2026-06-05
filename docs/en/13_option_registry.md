@@ -834,7 +834,7 @@ Shows internal shader debug views such as material category, reflective mask, ro
 | Category | Debug |
 | Type | Integer cycle |
 | Default | `0` |
-| Values | `0` Off, `1` Final Pass Marker, `2` UV Gradient, `3` Material Category |
+| Values | `0` Off, `1` Final Pass Marker, `2` UV Gradient, `3` Material Category, `4` Reflective Mask |
 | Cost tier | Very Low |
 | Visual impact | Debug-only |
 | Dependencies | Final pass debug routing |
@@ -844,13 +844,13 @@ Shows internal shader debug views such as material category, reflective mask, ro
 
 Purpose:
 
-`VRTX_DEBUG_VIEW` exposes the Level 1 debug routing through Iris shader settings.
+`VRTX_DEBUG_VIEW` exposes the shared Level 1 and Level 2 debug routing through Iris shader settings.
 
-It is intended to validate whether the final pass controls output and whether screen-space UV routing works.
+It is intended to validate final-pass control, screen-space UV routing, material categories, and reflective permission.
 
 This option must remain disabled by default.
 
-The Material Category mode is currently a Level 2 placeholder and only displays the category of the material ID provided by the current pipeline. Real block/material classification is not connected yet.
+The Material Category and Reflective Mask modes are currently Level 2 placeholders. They only display the category and reflection permission of the material ID provided by the current pipeline. Real block/material classification is not connected yet, so unknown materials use the conservative non-reflective fallback.
 
 ---
 

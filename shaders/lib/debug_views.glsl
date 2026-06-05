@@ -49,6 +49,15 @@ vec3 applyMaterialCategoryDebug(int materialId) {
     return getMaterialCategoryDebugColor(category);
 }
 
+vec3 applyReflectiveMaskDebug(int materialId) {
+    // White marks approved reflective materials; black is the conservative fallback.
+    if (materialAllowsReflection(materialId)) {
+        return vec3(1.0);
+    }
+
+    return vec3(0.0);
+}
+
 vec3 applyDebugView(vec3 color, vec2 uv, int materialId) {
     int mode = getDebugViewMode();
 
@@ -62,6 +71,10 @@ vec3 applyDebugView(vec3 color, vec2 uv, int materialId) {
 
     if (mode == VRTX_DEBUG_MATERIAL_CATEGORY) {
         return applyMaterialCategoryDebug(materialId);
+    }
+
+    if (mode == VRTX_DEBUG_REFLECTIVE_MASK) {
+        return applyReflectiveMaskDebug(materialId);
     }
 
     return color;

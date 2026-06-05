@@ -834,7 +834,7 @@ Muestra debug views internas del shader como categoría material, reflective mas
 | Categoría | Debug |
 | Tipo | Ciclo entero |
 | Valor por defecto | `0` |
-| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV, `3` Categoría material |
+| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV, `3` Categoría material, `4` Máscara reflectiva |
 | Tier de costo | Very Low |
 | Impacto visual | Solo depuración |
 | Dependencias | Enrutamiento de debug en final pass |
@@ -844,13 +844,13 @@ Muestra debug views internas del shader como categoría material, reflective mas
 
 Propósito:
 
-`VRTX_DEBUG_VIEW` expone el enrutamiento de debug de Nivel 1 mediante las opciones de shader de Iris.
+`VRTX_DEBUG_VIEW` expone el enrutamiento debug compartido de Nivel 1 y Nivel 2 mediante las opciones de shader de Iris.
 
-Está pensado para validar si el final pass controla la salida y si el enrutamiento de coordenadas UV de pantalla funciona.
+Está pensado para validar el control del final pass, el enrutamiento de coordenadas UV de pantalla, las categorías materiales y el permiso de reflexión.
 
 Esta opción debe permanecer desactivada por defecto.
 
-El modo Categoría material actualmente es un placeholder de Nivel 2 y solo muestra la categoría del ID material entregado por el pipeline actual. La clasificación real de bloques/materiales todavía no está conectada.
+Los modos Categoría material y Máscara reflectiva son actualmente placeholders de Nivel 2. Solo muestran la categoría y el permiso de reflexión del ID material entregado por el pipeline actual. La clasificación real de bloques/materiales todavía no está conectada, por lo que los materiales desconocidos usan el fallback conservador no reflectivo.
 
 ---
 
