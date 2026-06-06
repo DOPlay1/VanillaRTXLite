@@ -508,6 +508,39 @@ No implica todavía clasificación material por bloque.
 
 ---
 
+### COMP-009 — Validación de la máscara reflectiva en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-009
+Fecha: 2026-08-02
+Versión del proyecto: Rama núcleo material de Nivel 2 / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, 1 opción modificada
+Dimensión: Overworld
+Escena o prueba: Enrutamiento de Máscara Reflectiva y fallback conservador para material desconocido
+Resultado: Pass
+Nivel de soporte: Experimental
+Modos debug probados: Apagado, Máscara Reflectiva
+Problemas conocidos: La clasificación real de bloques/materiales todavía no está conectada, por lo que el material Unknown actual produce una máscara uniforme negra y no reflectiva.
+Notas: El shader pack cargó normalmente antes de activar Máscara Reflectiva. Al activar el modo se reconstruyó el pipeline del Overworld sin errores de compilación del shader y se produjo la máscara negra uniforme esperada, conservando el HUD. El latest.log de Minecraft confirmó el paquete de prueba y la creación exitosa del pipeline.
+```
+
+Esta entrada confirma que la ruta debug de máscara reflectiva de Nivel 2 compila y asigna por defecto comportamiento no reflectivo a los materiales desconocidos.
+
+No implica todavía clasificación reflectiva real por bloque.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

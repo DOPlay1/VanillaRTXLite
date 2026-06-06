@@ -508,6 +508,39 @@ It does not imply per-block material classification yet.
 
 ---
 
+### COMP-009 — Reflective mask debug view validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-009
+Date: 2026-08-02
+Project version: Level 2 material core branch / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Custom, 1 option changed
+Dimension: Overworld
+Scene or test: Reflective Mask debug view routing and conservative unknown-material fallback
+Result: Pass
+Support level: Experimental
+Debug modes tested: Off, Reflective Mask
+Known issues: Real block/material classification is not connected yet, so the current Unknown material produces a uniform black non-reflective mask.
+Notes: The shader pack loaded normally before enabling Reflective Mask. Enabling the mode rebuilt the Overworld pipeline without shader compilation errors and produced the expected uniform black mask while preserving the HUD. Minecraft latest.log confirmed the test pack and successful pipeline creation.
+```
+
+This entry confirms that the Level 2 reflective mask debug route compiles and defaults unknown materials to non-reflective behavior.
+
+It does not imply real per-block reflective classification yet.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
