@@ -6,8 +6,9 @@
 #define VRTX_DEBUG_UV_GRADIENT 2
 #define VRTX_DEBUG_MATERIAL_CATEGORY 3
 #define VRTX_DEBUG_REFLECTIVE_MASK 4
+#define VRTX_DEBUG_ROUGHNESS 5
 
-#define VRTX_DEBUG_VIEW 0 // [0 1 2 3 4] Debug view mode
+#define VRTX_DEBUG_VIEW 0 // [0 1 2 3 4 5] Debug view mode
 
 #define VRTX_MATERIAL_UNKNOWN 0
 

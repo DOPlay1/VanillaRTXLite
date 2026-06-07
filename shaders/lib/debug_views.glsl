@@ -58,6 +58,13 @@ vec3 applyReflectiveMaskDebug(int materialId) {
     return vec3(0.0);
 }
 
+vec3 applyRoughnessDebug(int materialId) {
+    // Black represents smooth surfaces; white represents fully rough surfaces.
+    float roughness = clamp(getMaterialBaseRoughness(materialId), 0.0, 1.0);
+
+    return vec3(roughness);
+}
+
 vec3 applyDebugView(vec3 color, vec2 uv, int materialId) {
     int mode = getDebugViewMode();
 
@@ -75,6 +82,10 @@ vec3 applyDebugView(vec3 color, vec2 uv, int materialId) {
 
     if (mode == VRTX_DEBUG_REFLECTIVE_MASK) {
         return applyReflectiveMaskDebug(materialId);
+    }
+
+    if (mode == VRTX_DEBUG_ROUGHNESS) {
+        return applyRoughnessDebug(materialId);
     }
 
     return color;
