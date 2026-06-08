@@ -541,6 +541,39 @@ No implica todavía clasificación reflectiva real por bloque.
 
 ---
 
+### COMP-010 — Validación de la vista de rugosidad en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-010
+Fecha: 2026-08-02
+Versión del proyecto: Rama núcleo material de Nivel 2 / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, 1 opción modificada
+Dimensión: Overworld
+Escena o prueba: Enrutamiento de la vista de Rugosidad y fallback totalmente rugoso para material desconocido
+Resultado: Pass
+Nivel de soporte: Experimental
+Modos debug probados: Rugosidad
+Problemas conocidos: La clasificación real de bloques/materiales todavía no está conectada, por lo que el material Unknown actual usa roughness 1.0 y produce una salida debug uniforme blanca.
+Notas: Al activar Rugosidad se reconstruyó el pipeline del Overworld sin errores de compilación del shader y se produjo la salida blanca uniforme esperada, conservando el HUD. El latest.log de Minecraft confirmó creaciones repetidas y exitosas del pipeline con el paquete de prueba activo.
+```
+
+Esta entrada confirma que la ruta debug de rugosidad de Nivel 2 compila y asigna por defecto comportamiento totalmente rugoso a los materiales desconocidos.
+
+No implica todavía clasificación real de rugosidad por bloque.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

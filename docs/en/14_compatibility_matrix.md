@@ -541,6 +541,39 @@ It does not imply real per-block reflective classification yet.
 
 ---
 
+### COMP-010 — Roughness debug view validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-010
+Date: 2026-08-02
+Project version: Level 2 material core branch / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Custom, 1 option changed
+Dimension: Overworld
+Scene or test: Roughness debug view routing and fully rough unknown-material fallback
+Result: Pass
+Support level: Experimental
+Debug modes tested: Roughness
+Known issues: Real block/material classification is not connected yet, so the current Unknown material uses roughness 1.0 and produces a uniform white debug output.
+Notes: Enabling Roughness rebuilt the Overworld pipeline without shader compilation errors and produced the expected uniform white output while preserving the HUD. Minecraft latest.log confirmed repeated successful pipeline creation with the test pack active.
+```
+
+This entry confirms that the Level 2 roughness debug route compiles and defaults unknown materials to fully rough behavior.
+
+It does not imply real per-block roughness classification yet.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
