@@ -30,6 +30,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Recorded reflective mask debug view validation as `COMP-009`.
 - Added internal roughness debug view mode with a fully rough unknown-material fallback.
 - Recorded roughness debug view validation as `COMP-010`.
+- Added a bounded Schlick-style Fresnel helper without enabling reflection output.
 
 ### Fixed
 
