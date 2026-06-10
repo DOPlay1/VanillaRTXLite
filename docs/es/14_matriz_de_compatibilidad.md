@@ -574,6 +574,38 @@ No implica todavía clasificación real de rugosidad por bloque.
 
 ---
 
+### COMP-011 — Validación de compilación del helper Fresnel acotado en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-011
+Fecha: 2026-08-02
+Versión del proyecto: Rama núcleo material de Nivel 2 / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, 0 opciones modificadas
+Dimensión: Overworld
+Escena o prueba: Include del helper Fresnel acotado y comprobación de regresión visual baseline
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: El helper Fresnel todavía no está conectado a la salida material ni de reflejos.
+Notas: El shader pack cargó con `fresnel.glsl` incluido en el final pass. Iris creó el pipeline del Overworld sin errores de compilación del shader y la imagen baseline permaneció sin cambios con Debug View apagado.
+```
+
+Esta entrada confirma que el helper Fresnel acotado estilo Schlick compila en el pipeline GLSL actual de Iris sin cambiar la salida visual.
+
+No valida todavía la respuesta Fresnel específica por material.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

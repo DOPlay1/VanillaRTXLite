@@ -574,6 +574,38 @@ It does not imply real per-block roughness classification yet.
 
 ---
 
+### COMP-011 — Bounded Fresnel helper compile validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-011
+Date: 2026-08-02
+Project version: Level 2 material core branch / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Custom, 0 options changed
+Dimension: Overworld
+Scene or test: Bounded Fresnel helper include and baseline visual regression check
+Result: Pass
+Support level: Experimental
+Known issues: The Fresnel helper is not connected to material or reflection output yet.
+Notes: The shader pack loaded with `fresnel.glsl` included in the final pass. Iris created the Overworld pipeline without shader compilation errors, and the baseline image remained unchanged with Debug View Off.
+```
+
+This entry confirms that the bounded Schlick-style Fresnel helper compiles in the current Iris GLSL pipeline without changing visual output.
+
+It does not validate material-specific Fresnel response yet.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
