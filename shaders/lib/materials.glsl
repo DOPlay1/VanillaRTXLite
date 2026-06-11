@@ -119,4 +119,42 @@ float getMaterialBaseRoughness(int materialId) {
     return 1.0;
 }
 
+float getMaterialFresnelStrength(int materialId) {
+    if (isProtectedMatteMaterial(materialId)) {
+        return 0.0;
+    }
+
+    if (materialId == VRTX_MATERIAL_WATER) {
+        return 0.85;
+    }
+
+    if (materialId == VRTX_MATERIAL_GLASS) {
+        return 0.65;
+    }
+
+    if (materialId == VRTX_MATERIAL_TINTED_GLASS) {
+        return 0.60;
+    }
+
+    if (materialId == VRTX_MATERIAL_ICE) {
+        return 0.70;
+    }
+
+    if (materialId == VRTX_MATERIAL_COPPER_FRESH) {
+        return 0.35;
+    }
+
+    if (materialId == VRTX_MATERIAL_COPPER_OXIDIZED) {
+        return 0.15;
+    }
+
+    if (materialId == VRTX_MATERIAL_AMETHYST) {
+        return 0.35;
+    }
+
+    // Fresnel strength does not grant reflection permission.
+    // Unknown materials remain disabled by default.
+    return 0.0;
+}
+
 #endif
