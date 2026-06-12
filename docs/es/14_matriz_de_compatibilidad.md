@@ -606,6 +606,38 @@ No valida todavía la respuesta Fresnel específica por material.
 
 ---
 
+### COMP-012 — Validación de compilación de intensidades Fresnel por material en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-012
+Fecha: 2026-08-03
+Versión del proyecto: Rama núcleo material de Nivel 2 / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, 0 opciones modificadas
+Dimensión: Overworld
+Escena o prueba: Intensidades Fresnel por material y comprobación de regresión visual baseline nocturna
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: Las intensidades Fresnel por material todavía no están conectadas a una salida visible Fresnel ni de reflejos.
+Notas: Iris cargó el shader pack de prueba y creó el pipeline del Overworld sin errores de compilación del shader. La imagen baseline nocturna posterior permaneció visualmente estable con Debug View apagado.
+```
+
+Esta entrada confirma que las intensidades Fresnel por material compilan en el pipeline GLSL actual de Iris sin cambiar la salida baseline nocturna.
+
+No valida todavía una respuesta Fresnel visible por material.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

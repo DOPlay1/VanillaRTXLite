@@ -606,6 +606,38 @@ It does not validate material-specific Fresnel response yet.
 
 ---
 
+### COMP-012 — Material Fresnel strength compile validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-012
+Date: 2026-08-03
+Project version: Level 2 material core branch / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Custom, 0 options changed
+Dimension: Overworld
+Scene or test: Material Fresnel strength defaults and nighttime baseline regression check
+Result: Pass
+Support level: Experimental
+Known issues: Material Fresnel strengths are not connected to visible Fresnel or reflection output yet.
+Notes: Iris loaded the test shader pack and created the Overworld pipeline without shader compilation errors. The subsequent nighttime baseline image remained visually stable with Debug View Off.
+```
+
+This entry confirms that the material Fresnel strength defaults compile in the current Iris GLSL pipeline without changing the nighttime baseline output.
+
+It does not validate visible per-material Fresnel response yet.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:

@@ -33,6 +33,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Added a bounded Schlick-style Fresnel helper without enabling reflection output.
 - Recorded bounded Fresnel helper compile validation as `COMP-011`.
 - Added material Fresnel strength defaults aligned with the canonical material matrix.
+- Recorded material Fresnel strength compile validation as `COMP-012`.
 
 ### Fixed
 
