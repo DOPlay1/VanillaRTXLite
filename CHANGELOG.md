@@ -34,6 +34,9 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Recorded bounded Fresnel helper compile validation as `COMP-011`.
 - Added material Fresnel strength defaults aligned with the canonical material matrix.
 - Recorded material Fresnel strength compile validation as `COMP-012`.
+- Added conservative vanilla block mappings for the initial Level 2 material set.
+- Added terrain material data transport for category, roughness, reflection-mask, and Fresnel debug views.
+- Added a bounded Fresnel factor debug view without enabling visible reflections.
 
 ### Fixed
 

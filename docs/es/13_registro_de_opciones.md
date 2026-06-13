@@ -834,10 +834,10 @@ Muestra debug views internas del shader como categoría material, reflective mas
 | Categoría | Debug |
 | Tipo | Ciclo entero |
 | Valor por defecto | `0` |
-| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV, `3` Categoría material, `4` Máscara reflectiva, `5` Rugosidad |
-| Tier de costo | Very Low |
+| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV, `3` Categoría material, `4` Máscara reflectiva, `5` Rugosidad, `6` Factor Fresnel |
+| Tier de costo | Low |
 | Impacto visual | Solo depuración |
-| Dependencias | Enrutamiento de debug en final pass |
+| Dependencias | Datos materiales de terreno y enrutamiento de debug en final pass |
 | Estabilidad | Experimental |
 | Visible al usuario | Sí |
 | Restricciones | Debe permanecer apagado por defecto. No debe usarse como modo visual de gameplay. |
@@ -846,11 +846,11 @@ Propósito:
 
 `VRTX_DEBUG_VIEW` expone el enrutamiento debug compartido de Nivel 1 y Nivel 2 mediante las opciones de shader de Iris.
 
-Está pensado para validar el control del final pass, el enrutamiento de coordenadas UV de pantalla, las categorías materiales, el permiso de reflexión y la rugosidad base.
+Está pensado para validar el control del final pass, el enrutamiento de coordenadas UV de pantalla, las categorías materiales, el permiso de reflexión, la rugosidad base y la respuesta Fresnel acotada.
 
 Esta opción debe permanecer desactivada por defecto.
 
-Los modos Categoría material, Máscara reflectiva y Rugosidad son actualmente placeholders de Nivel 2. Muestran la categoría, el permiso de reflexión y la rugosidad base del ID material entregado por el pipeline actual. La clasificación real de bloques/materiales todavía no está conectada, por lo que los materiales desconocidos usan fallbacks conservadores no reflectivos y totalmente rugosos.
+Los modos Categoría material, Máscara reflectiva, Rugosidad y Factor Fresnel consumen el buffer material inicial de terreno de Nivel 2. El mapeo cubre intencionalmente solo un conjunto conservador de bloques vanilla. El terreno no mapeado y la geometría no soportada permanecen como desconocidos y usan fallbacks no reflectivos, totalmente rugosos y con Fresnel cero.
 
 ---
 

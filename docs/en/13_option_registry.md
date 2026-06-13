@@ -834,10 +834,10 @@ Shows internal shader debug views such as material category, reflective mask, ro
 | Category | Debug |
 | Type | Integer cycle |
 | Default | `0` |
-| Values | `0` Off, `1` Final Pass Marker, `2` UV Gradient, `3` Material Category, `4` Reflective Mask, `5` Roughness |
-| Cost tier | Very Low |
+| Values | `0` Off, `1` Final Pass Marker, `2` UV Gradient, `3` Material Category, `4` Reflective Mask, `5` Roughness, `6` Fresnel Factor |
+| Cost tier | Low |
 | Visual impact | Debug-only |
-| Dependencies | Final pass debug routing |
+| Dependencies | Terrain material data and final pass debug routing |
 | Stability | Experimental |
 | User-facing | Yes |
 | Constraints | Must remain Off by default. Must not be used as a gameplay visual mode. |
@@ -846,11 +846,11 @@ Purpose:
 
 `VRTX_DEBUG_VIEW` exposes the shared Level 1 and Level 2 debug routing through Iris shader settings.
 
-It is intended to validate final-pass control, screen-space UV routing, material categories, reflective permission, and base roughness.
+It is intended to validate final-pass control, screen-space UV routing, material categories, reflective permission, base roughness, and bounded Fresnel response.
 
 This option must remain disabled by default.
 
-The Material Category, Reflective Mask, and Roughness modes are currently Level 2 placeholders. They display the category, reflection permission, and base roughness of the material ID provided by the current pipeline. Real block/material classification is not connected yet, so unknown materials use conservative non-reflective and fully rough fallbacks.
+The Material Category, Reflective Mask, Roughness, and Fresnel Factor modes consume the initial Level 2 terrain material buffer. The mapping intentionally covers only a conservative set of vanilla blocks. Unmapped terrain and unsupported geometry remain unknown and use non-reflective, fully rough, zero-Fresnel fallbacks.
 
 ---
 

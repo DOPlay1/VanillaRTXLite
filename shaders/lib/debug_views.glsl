@@ -65,7 +65,15 @@ vec3 applyRoughnessDebug(int materialId) {
     return vec3(roughness);
 }
 
-vec3 applyDebugView(vec3 color, vec2 uv, int materialId) {
+vec3 applyFresnelFactorDebug(int materialId, float viewCosine) {
+    float strength = getMaterialFresnelStrength(materialId);
+    float fresnelFactor = computeBoundedFresnel(viewCosine, strength, strength);
+
+    // Matte and unknown materials remain black because their strength is zero.
+    return vec3(fresnelFactor);
+}
+
+vec3 applyDebugView(vec3 color, vec2 uv, int materialId, float viewCosine) {
     int mode = getDebugViewMode();
 
     if (mode == VRTX_DEBUG_FINAL_PASS_MARKER) {
@@ -86,6 +94,10 @@ vec3 applyDebugView(vec3 color, vec2 uv, int materialId) {
 
     if (mode == VRTX_DEBUG_ROUGHNESS) {
         return applyRoughnessDebug(materialId);
+    }
+
+    if (mode == VRTX_DEBUG_FRESNEL_FACTOR) {
+        return applyFresnelFactorDebug(materialId, viewCosine);
     }
 
     return color;

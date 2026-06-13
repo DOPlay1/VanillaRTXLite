@@ -7,6 +7,8 @@ varying vec2 texcoord;
 varying vec2 lightmapCoord;
 varying vec4 vertexColor;
 
+/* RENDERTARGETS: 0 */
+
 void main() {
     vec4 albedo = texture2D(texture, texcoord) * vertexColor;
 
