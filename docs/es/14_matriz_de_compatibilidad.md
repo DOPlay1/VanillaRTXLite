@@ -638,6 +638,38 @@ No valida todavía una respuesta Fresnel visible por material.
 
 ---
 
+### COMP-013 — Validación inicial de datos materiales de terreno y suite debug en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-013
+Fecha: 2026-08-03
+Versión del proyecto: Rama núcleo material de Nivel 2 / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, 0 opciones modificadas para baseline y 1 opción modificada para cada debug view
+Dimensión: Overworld
+Escena o prueba: Validación exterior diurna y de costa con Debug apagado, Categoría material, Máscara reflectiva, Rugosidad y Factor Fresnel
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: El transporte material inicial cubre solamente terreno. Las entidades, la mano del jugador y otra geometría no soportada todavía no proporcionan datos materiales.
+Notas: Iris cargó el archivo de prueba corregido y recreó el pipeline del Overworld para cada modo debug sin errores de compilación del shader. La vista Categoría material mostró el agua mapeada en azul, el terreno mate mapeado en gris y las regiones desconocidas en negro. La Máscara reflectiva mantuvo negras las regiones mate y desconocidas mientras marcó el agua mapeada en blanco. La vista Rugosidad mostró rugosidad alta en terreno mate y menor rugosidad en el agua. La vista Factor Fresnel mantuvo negro el terreno mate y concentró la respuesta acotada sobre el agua en ángulos rasantes. Debug apagado restauró la salida baseline normal. Una observación transitoria sobre los ojos de mobs durante una sesión anterior con fallback por paquete inválido no se reprodujo con el shader pack válido.
+```
+
+Esta entrada confirma que el buffer material inicial de terreno llega al final pass y controla las cuatro debug views materiales de Nivel 2 con fallbacks conservadores.
+
+No valida reflejos, salida specular ni cobertura completa de bloques y geometría.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

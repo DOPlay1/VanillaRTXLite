@@ -638,6 +638,38 @@ It does not validate visible per-material Fresnel response yet.
 
 ---
 
+### COMP-013 — Initial terrain material data and debug suite validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-013
+Date: 2026-08-03
+Project version: Level 2 material core branch / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Custom, 0 options changed for baseline and 1 option changed for each debug view
+Dimension: Overworld
+Scene or test: Daylight exterior and shoreline validation of Debug Off, Material Category, Reflective Mask, Roughness, and Fresnel Factor
+Result: Pass
+Support level: Experimental
+Known issues: Initial material transport covers terrain only. Entities, the player hand, and other unsupported geometry do not provide material data yet.
+Notes: Iris loaded the corrected test archive and recreated the Overworld pipeline for every debug mode without shader compilation errors. The Material Category view showed mapped water in blue, mapped matte terrain in gray, and unknown regions in black. The Reflective Mask kept matte and unknown regions black while marking mapped water white. The Roughness view showed high roughness on matte terrain and lower roughness on water. The Fresnel Factor view kept matte terrain black and concentrated the bounded response on water at grazing angles. Debug Off restored the normal baseline output. A transient mob-eye observation from an earlier invalid-pack fallback session was not reproduced with the valid shader pack.
+```
+
+This entry confirms that the initial terrain material buffer reaches the final pass and drives the four Level 2 material debug views with conservative fallbacks.
+
+It does not validate reflections, specular output, or complete block and geometry coverage.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
