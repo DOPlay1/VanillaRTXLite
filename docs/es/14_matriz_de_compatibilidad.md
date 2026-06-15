@@ -670,6 +670,38 @@ No valida reflejos, salida specular ni cobertura completa de bloques y geometrí
 
 ---
 
+### COMP-014 — Validación debug de una alineación material específica en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-014
+Fecha: 2026-08-03
+Versión del proyecto: Rama núcleo material de Nivel 2 / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, 0 opciones modificadas para baseline y 1 opción modificada para cada debug view
+Dimensión: Overworld
+Escena o prueba: Alineación costera diurna con vidrio, vidrio tintado, amatista, oro, etapas de oxidación del cobre, hielo normal y packed o blue ice; Debug apagado, Categoría material, Máscara reflectiva y Factor Fresnel
+Resultado: Parcial
+Nivel de soporte: Experimental
+Problemas conocidos: Los bloques tipo oro, las etapas intermedias de oxidación del cobre, packed o blue ice y los clusters de amatista no están incluidos en el mapeo conservador inicial y usan el fallback seguro Unknown. El transporte material inicial continúa limitado al terreno.
+Notas: Iris recreó el pipeline del Overworld para cada modo debug seleccionado sin errores de compilación ni link del shader. El baseline normal permaneció estable. Las variantes de vidrio mapeadas, el hielo normal, el cobre fresco y totalmente oxidado, los bloques de amatista, el agua y el terreno mate circundante produjeron las salidas esperadas de categoría y permiso. La alineación también expuso variantes aprobadas aún no mapeadas: permanecieron oscuras en Categoría material, no reflectivas en Máscara reflectiva, totalmente rugosas y con Fresnel cero mediante el fallback conservador Unknown.
+```
+
+Esta entrada confirma que los mapeos aprobados iniciales permanecen conservadores y que las variantes no soportadas fallan de forma segura en lugar de heredar permiso de reflexión.
+
+Identifica la siguiente tarea acotada del núcleo material: ampliar la cobertura vanilla aprobada sin debilitar la protección mate.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

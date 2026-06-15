@@ -38,6 +38,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Added terrain material data transport for category, roughness, reflection-mask, and Fresnel debug views.
 - Added a bounded Fresnel factor debug view without enabling visible reflections.
 - Recorded initial terrain material data and debug suite validation as `COMP-013`.
+- Recorded targeted approved-material lineup validation as `COMP-014`.
 
 ### Fixed
 

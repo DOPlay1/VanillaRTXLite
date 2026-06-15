@@ -670,6 +670,38 @@ It does not validate reflections, specular output, or complete block and geometr
 
 ---
 
+### COMP-014 — Targeted material lineup debug validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-014
+Date: 2026-08-03
+Project version: Level 2 material core branch / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Custom, 0 options changed for baseline and 1 option changed for each debug view
+Dimension: Overworld
+Scene or test: Daylight shoreline lineup with glass, tinted glass, amethyst, gold, copper oxidation stages, regular ice, and packed or blue ice; Debug Off, Material Category, Reflective Mask, and Fresnel Factor
+Result: Partial
+Support level: Experimental
+Known issues: Gold-like blocks, intermediate copper oxidation stages, packed or blue ice, and amethyst clusters are not included in the initial conservative block mapping and use the safe Unknown fallback. Initial material transport remains terrain-only.
+Notes: Iris recreated the Overworld pipeline for each selected debug mode without shader compilation or link errors. The normal baseline remained stable. Mapped glass variants, regular ice, fresh and fully oxidized copper, amethyst blocks, water, and surrounding matte terrain produced their expected category and permission outputs. The lineup also exposed intentionally unmapped approved material variants: they remained dark in Material Category, non-reflective in Reflective Mask, fully rough, and zero-Fresnel through the conservative Unknown fallback.
+```
+
+This entry confirms that the initial approved mappings remain conservative and that unsupported variants fail safely instead of inheriting reflection permission.
+
+It identifies the next bounded material-core task: expand approved vanilla coverage without weakening matte protection.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
