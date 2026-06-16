@@ -18,14 +18,16 @@ int getMaterialCategory(int materialId) {
         materialId == VRTX_MATERIAL_WATER ||
         materialId == VRTX_MATERIAL_GLASS ||
         materialId == VRTX_MATERIAL_TINTED_GLASS ||
-        materialId == VRTX_MATERIAL_ICE
+        materialId == VRTX_MATERIAL_ICE ||
+        materialId == VRTX_MATERIAL_PACKED_BLUE_ICE
     ) {
         return VRTX_MATERIAL_CATEGORY_PRIMARY_REFLECTIVE;
     }
 
     if (
         materialId == VRTX_MATERIAL_COPPER_FRESH ||
-        materialId == VRTX_MATERIAL_COPPER_OXIDIZED
+        materialId == VRTX_MATERIAL_COPPER_OXIDIZED ||
+        materialId == VRTX_MATERIAL_GOLD_LIKE
     ) {
         return VRTX_MATERIAL_CATEGORY_SECONDARY_SPECULAR;
     }
@@ -103,6 +105,14 @@ float getMaterialBaseRoughness(int materialId) {
         return 0.20;
     }
 
+    if (materialId == VRTX_MATERIAL_PACKED_BLUE_ICE) {
+        return 0.28;
+    }
+
+    if (materialId == VRTX_MATERIAL_GOLD_LIKE) {
+        return 0.28;
+    }
+
     if (materialId == VRTX_MATERIAL_COPPER_FRESH) {
         return 0.32;
     }
@@ -138,6 +148,14 @@ float getMaterialFresnelStrength(int materialId) {
 
     if (materialId == VRTX_MATERIAL_ICE) {
         return 0.70;
+    }
+
+    if (materialId == VRTX_MATERIAL_PACKED_BLUE_ICE) {
+        return 0.60;
+    }
+
+    if (materialId == VRTX_MATERIAL_GOLD_LIKE) {
+        return 0.35;
     }
 
     if (materialId == VRTX_MATERIAL_COPPER_FRESH) {
