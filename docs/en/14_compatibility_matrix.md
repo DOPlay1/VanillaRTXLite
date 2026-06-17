@@ -702,6 +702,38 @@ It identifies the next bounded material-core task: expand approved vanilla cover
 
 ---
 
+### COMP-015 — Expanded approved-material coverage validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-015
+Date: 2026-08-03
+Project version: Level 2 material core branch / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Custom, 0 options changed for baseline and 1 option changed for each debug view
+Dimension: Overworld
+Scene or test: Daylight shoreline lineup after expanded gold, copper, amethyst, and ice mappings; Material Category, Reflective Mask, Roughness, Fresnel Factor, and Debug Off
+Result: Pass
+Support level: Experimental
+Known issues: Material transport remains terrain-only. Exposed copper currently shares the fresh-copper profile, while weathered copper shares the oxidized-copper profile. The Xray_Ultimate resource pack was active, so Debug Off confirms output restoration but does not establish a default-resource visual baseline.
+Notes: Iris loaded the updated test archive and recreated the Overworld pipeline for all four material debug views and Debug Off without shader compilation or link errors. Material Category showed glass and ice families in blue, amethyst blocks and clusters in purple, gold and every sampled copper oxidation stage in orange, and matte terrain in gray. Reflective Mask granted permission to water, glass, and ice families while keeping gold, copper, amethyst, and matte terrain black. Roughness produced the expected grayscale separation across glass, crystalline, metallic, ice, and matte profiles. Fresnel remained bounded and angle-dependent, with low front-facing response and zero response on protected matte materials. Debug Off restored normal gameplay output.
+```
+
+This entry confirms that the expanded approved vanilla mappings reach every Level 2 material debug view while preserving conservative reflection permission and matte protection.
+
+It does not validate visible specular highlights, reflections, SSR, unsupported geometry, or the default-resource visual baseline.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:

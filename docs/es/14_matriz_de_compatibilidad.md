@@ -702,6 +702,38 @@ Identifica la siguiente tarea acotada del núcleo material: ampliar la cobertura
 
 ---
 
+### COMP-015 — Validación de cobertura ampliada de materiales aprobados en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-015
+Fecha: 2026-08-03
+Versión del proyecto: Rama núcleo material de Nivel 2 / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, 0 opciones modificadas para baseline y 1 opción modificada para cada debug view
+Dimensión: Overworld
+Escena o prueba: Alineación costera diurna después de ampliar los mapeos de oro, cobre, amatista y hielo; Categoría material, Máscara reflectiva, Rugosidad, Factor Fresnel y Debug apagado
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: El transporte material continúa limitado al terreno. El cobre exposed comparte actualmente el perfil del cobre fresh, mientras el cobre weathered comparte el perfil del cobre oxidized. El resource pack Xray_Ultimate estaba activo, por lo que Debug apagado confirma la restauración de salida pero no establece una baseline visual con recursos por defecto.
+Notas: Iris cargó el archivo de prueba actualizado y recreó el pipeline del Overworld para las cuatro debug views materiales y Debug apagado sin errores de compilación ni link del shader. Categoría material mostró las familias de vidrio y hielo en azul, los bloques y clusters de amatista en morado, el oro y todas las etapas de oxidación del cobre probadas en naranja, y el terreno mate en gris. Máscara reflectiva concedió permiso al agua y a las familias de vidrio y hielo, manteniendo negros el oro, cobre, amatista y terreno mate. Rugosidad produjo la separación en escala de grises esperada entre perfiles de vidrio, cristalinos, metálicos, hielo y mate. Fresnel permaneció acotado y dependiente del ángulo, con respuesta frontal baja y respuesta cero sobre materiales mate protegidos. Debug apagado restauró la salida normal de gameplay.
+```
+
+Esta entrada confirma que los mapeos vanilla aprobados ampliados llegan a todas las debug views materiales de Nivel 2 mientras conservan un permiso de reflexión conservador y la protección mate.
+
+No valida highlights specular visibles, reflejos, SSR, geometría no soportada ni la baseline visual con recursos por defecto.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

@@ -40,6 +40,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Recorded initial terrain material data and debug suite validation as `COMP-013`.
 - Recorded targeted approved-material lineup validation as `COMP-014`.
 - Expanded conservative mappings for approved gold, copper, amethyst, and ice variants.
+- Recorded expanded approved-material coverage validation as `COMP-015`.
 
 ### Fixed
 
