@@ -734,6 +734,38 @@ It does not validate visible specular highlights, reflections, SSR, unsupported 
 
 ---
 
+### COMP-016 — Default-resource material lineup baseline on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-016
+Date: 2026-08-03
+Project version: Level 2 material core branch / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Custom, 0 options changed
+Dimension: Overworld
+Scene or test: Debug Off daylight shoreline lineup with the default Minecraft resources
+Result: Pass
+Support level: Experimental
+Known issues: Material transport remains terrain-only. Visible material-aware specular response and reflections are outside the Level 2 scope and remain unimplemented.
+Notes: Minecraft reloaded the resource manager with vanilla resources and the required Fabric, Iris, and Sodium resources only; no external resource pack remained active. The existing Vanilla RTX Lite shader session stayed active with Debug Off. The captured lineup preserved vanilla block textures, transparent glass readability, distinct copper oxidation stages, amethyst identity, ice identity, matte sand, water, vegetation, and normal HUD rendering. The resource reload and capture produced no shader compilation or link errors.
+```
+
+This entry establishes the clean default-resource visual baseline for the expanded Level 2 material lineup.
+
+It validates normal Debug Off output, not future visible specular or reflection behavior.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:

@@ -41,6 +41,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Recorded targeted approved-material lineup validation as `COMP-014`.
 - Expanded conservative mappings for approved gold, copper, amethyst, and ice variants.
 - Recorded expanded approved-material coverage validation as `COMP-015`.
+- Recorded the default-resource Level 2 material lineup baseline as `COMP-016`.
 
 ### Fixed
 

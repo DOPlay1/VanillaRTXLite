@@ -734,6 +734,38 @@ No valida highlights specular visibles, reflejos, SSR, geometría no soportada n
 
 ---
 
+### COMP-016 — Baseline de la alineación material con recursos por defecto en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-016
+Fecha: 2026-08-03
+Versión del proyecto: Rama núcleo material de Nivel 2 / pre-v0.3.0-prealpha
+Shader pack: VanillaRTXLite-Level2-Test.zip
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, 0 opciones modificadas
+Dimensión: Overworld
+Escena o prueba: Alineación costera diurna con Debug apagado y los recursos por defecto de Minecraft
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: El transporte material continúa limitado al terreno. La respuesta specular visible basada en materiales y los reflejos están fuera del alcance de Nivel 2 y continúan sin implementar.
+Notas: Minecraft recargó el resource manager únicamente con los recursos vanilla y los recursos requeridos por Fabric, Iris y Sodium; ningún resource pack externo permaneció activo. La sesión existente de Vanilla RTX Lite continuó activa con Debug apagado. La alineación capturada conservó las texturas vanilla de los bloques, la legibilidad del vidrio transparente, las distintas etapas de oxidación del cobre, la identidad de la amatista y el hielo, la arena mate, el agua, la vegetación y el render normal del HUD. La recarga de recursos y la captura no produjeron errores de compilación ni link del shader.
+```
+
+Esta entrada establece la baseline visual limpia con recursos por defecto para la alineación material ampliada de Nivel 2.
+
+Valida la salida normal con Debug apagado, no el comportamiento futuro de specular visible ni reflejos.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:
