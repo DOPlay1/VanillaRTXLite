@@ -42,8 +42,7 @@ vec3 getMaterialCategoryDebugColor(int category) {
 }
 
 vec3 applyMaterialCategoryDebug(int materialId) {
-    // Level 2 placeholder: this visualizes the category of a provided material ID.
-    // Real block/material classification is not connected yet.
+    // Visualizes material IDs transported from the supported terrain passes.
     int category = getMaterialCategory(materialId);
 
     return getMaterialCategoryDebugColor(category);

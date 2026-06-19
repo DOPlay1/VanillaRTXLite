@@ -58,19 +58,14 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Compatibility remains experimental.
 - Additional hand/item lighting, lightmap, and shadow handling are required before Level 1 can be considered visually clean.
 - Debug view modes are exposed for validation only and are not intended for normal gameplay.
-- Material classification is not connected to real block/material data yet.
-- Material-aware rendering is not implemented yet.
+- Visible material-aware lighting, specular response, and reflection output are not implemented yet; Level 2 currently provides material data and debug validation.
 - Reflection logic is not implemented yet.
-- Material category debug view currently uses placeholder material IDs until real block/material classification is connected.
 
 ### Planned
 
-- Begin Level 2 — Material Core.
-- Add material constants and category helpers.
-- Add conservative material classification placeholders.
-- Add material and reflective mask debug views.
-- Add bounded Fresnel helper.
-- Add roughness placeholder logic.
+- Prepare and validate the `v0.3.0-prealpha` Material Core milestone.
+- Begin Level 3 — Selective Reflections after the milestone is accepted.
+- Add controlled reflection gating for approved water, glass, and ice materials.
 
 ---
 

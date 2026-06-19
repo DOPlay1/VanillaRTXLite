@@ -5,18 +5,18 @@
 Current stage:
 
 ```plaintext
-Level 1 — Baseline Visuals
+Level 2 — Material Core
 Maturity: Pre-alpha
-Status: Completed, pending main merge/tag
-Suggested milestone: v0.2.0-prealpha
+Status: Completed, pending milestone candidate validation and tag
+Suggested milestone: v0.3.0-prealpha
 ```
 
 Next stage:
 
 ```plaintext
-Level 1 — Baseline Visuals
-Maturity: Pre-alpha
-Suggested milestone: v0.2.0-prealpha
+Level 3 — Selective Reflections
+Maturity: Alpha
+Suggested milestone: v0.4.0-alpha
 ```
 
 ---
@@ -257,7 +257,7 @@ Level 1 is complete when:
 ## 6. Level 2 — Material Core
 
 ```plaintext
-Status: Planned
+Status: Completed, pending milestone candidate validation and tag
 Maturity: Pre-alpha
 Suggested version: v0.3.0-prealpha
 ```
@@ -266,17 +266,20 @@ Suggested version: v0.3.0-prealpha
 
 Implement the core material logic required before reflections and advanced effects.
 
-### Planned work
+### Completed work
 
 - Define material IDs/constants
 - Add material category helpers
 - Add conservative material fallback logic
-- Add roughness placeholder or helper
+- Add base roughness helper
 - Add bounded Fresnel helper
 - Add material debug view
 - Add reflective mask debug view
 - Validate matte material protection
-- Start mapping approved materials where pipeline data allows
+- Transport terrain material data into the final debug pass
+- Map an initial conservative set of approved vanilla materials
+- Validate category, reflective permission, roughness, and Fresnel outputs
+- Validate Debug Off with default Minecraft resources
 
 ### Focus
 
@@ -568,14 +571,14 @@ Future work may include:
 
 ## 13. Current Immediate Next Steps
 
-After Level 1 closure:
+After Level 2 implementation closure:
 
-1. Merge `dev` into `main`.
-2. Create tag `v0.2.0-prealpha`.
-3. Start Level 2 — Material Core.
-4. Add material constants and category helpers.
-5. Add material debug views.
-6. Begin conservative material classification.
+1. Align milestone documentation and remove obsolete placeholder claims.
+2. Build a clean `v0.3.0-prealpha` candidate archive.
+3. Validate candidate installation, shader options, Debug Off, and Material Category with default resources.
+4. Merge `feature/level-2-material-core` into `dev` after review.
+5. Promote the accepted milestone through `main` and create tag `v0.3.0-prealpha`.
+6. Start Level 3 — Selective Reflections from the updated integration branch.
 
 ---
 

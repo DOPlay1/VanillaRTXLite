@@ -2,12 +2,12 @@
 
 > A Vanilla+ RTX-like shader for Minecraft Java Edition using Iris/GLSL.
 
-**Current status:** Pre-alpha — Level 1 baseline visuals completed  
-**Current roadmap stage:** Level 1 — Baseline Visuals  
-**Next roadmap stage:** Level 2 — Material Core  
-**Suggested milestone:** v0.2.0-prealpha  
-**Target Minecraft line:** 26.1.x  
-**Rendering backend:** OpenGL / GLSL via Iris  
+**Current status:** Pre-alpha — Level 2 material core completed<br>
+**Current roadmap stage:** Level 2 — Material Core<br>
+**Next roadmap stage:** Level 3 — Selective Reflections<br>
+**Suggested milestone:** v0.3.0-prealpha<br>
+**Target Minecraft line:** 26.1.x<br>
+**Rendering backend:** OpenGL / GLSL via Iris<br>
 **v1.0.0 scope:** Overworld only  
 
 ---
@@ -114,10 +114,18 @@ This project uses two progress systems:
 Current stage:
 
 ```plaintext
-Level 1 — Baseline Visuals
+Level 2 — Material Core
 Maturity: Pre-alpha
-Status: Completed, pending main merge/tag
-Suggested milestone: v0.2.0-prealpha
+Status: Completed, pending milestone candidate validation and tag
+Suggested milestone: v0.3.0-prealpha
+```
+
+Next stage:
+
+```plaintext
+Level 3 — Selective Reflections
+Maturity: Alpha
+Suggested milestone: v0.4.0-alpha
 ```
 
 Current mapping:
@@ -241,18 +249,18 @@ Este proyecto usa dos sistemas de progreso:
 Etapa actual:
 
 ```plaintext
-Nivel 1 — Visual base
+Nivel 2 — Núcleo material
 Madurez: Pre-alpha
-Estado: Completado, pendiente de merge a main/tag
-Hito sugerido: v0.2.0-prealpha
+Estado: Completado, pendiente de validación del candidato del hito y tag
+Hito sugerido: v0.3.0-prealpha
 ```
 
 Siguiente etapa:
 
 ```plaintext
-Nivel 1 — Visual base
-Madurez: Pre-alpha
-Hito sugerido: v0.2.0-prealpha
+Nivel 3 — Reflejos selectivos
+Madurez: Alpha
+Hito sugerido: v0.4.0-alpha
 ```
 
 Mapeo actual:
@@ -265,7 +273,7 @@ Mapeo actual:
 - Nivel 5 — Optimización y preparación de release: Beta
 - v1.0.0: Stable
 
-Este repositorio se encuentra actualmente en un hito de documentación y fundación del proyecto. Todavía no es una release del shader lista para gameplay.
+Este repositorio se encuentra actualmente en el hito de núcleo material de Nivel 2. Todavía no es una release del shader lista para gameplay.
 
 ---
 
