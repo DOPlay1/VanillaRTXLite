@@ -766,6 +766,39 @@ Valida la salida normal con Debug apagado, no el comportamiento futuro de specul
 
 ---
 
+### COMP-017 — Validación del paquete RC1 de v0.3.0-prealpha y arranque en frío en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-017
+Fecha: 2026-08-03
+Versión del proyecto: Candidato de release 1 de v0.3.0-prealpha
+Shader pack: VanillaRTXLite-v0.3.0-prealpha-rc1.zip
+SHA-256 del shader pack: F72DF77F0838AEEAA4B500AC4E8A11F94A861BD7B7B6317F81D77FDE2541D98C
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, 0 opciones modificadas para la baseline de arranque en frío y 1 opción modificada para Categoría material
+Dimensión: Overworld
+Escena o prueba: Inspección del archivo candidato limpio, instalación, acceso a opciones del shader, comprobación de Categoría material y posterior reinicio completo de la aplicación con Debug apagado
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: La validación cubre un único entorno Windows, NVIDIA e Iris. El transporte material continúa limitado al terreno y los reflejos visibles están fuera del hito de Nivel 2.
+Notas: El archivo candidato contuvo 27 entradas ZIP con separadores forward slash y la raíz shaders requerida, entrypoints de runtime, shaders.properties, mapeos de bloques, README, licencia MIT del código y licencia de documentación. No incluyó metadata Git, el árbol de documentación de desarrollo, el directorio build, ejemplos ni capturas. Las copias del repositorio e instalada tuvieron hashes SHA-256 coincidentes. Iris abrió las opciones del candidato y recreó el pipeline del Overworld para Categoría material sin errores del shader. En el reinicio completo posterior de Minecraft, Iris seleccionó directamente el archivo RC1 con Debug apagado y cero opciones modificadas, el resource manager cargó solamente recursos vanilla y los requeridos por Fabric, Iris y Sodium, y el pipeline del Overworld compiló correctamente. La alineación material capturada conservó la baseline aceptada con recursos por defecto.
+```
+
+Esta entrada acepta el archivo RC1 limpio como candidato de paquete validado para el hito Núcleo Material de Nivel 2.
+
+La promoción hacia ramas de integración o release y la creación del tag `v0.3.0-prealpha` permanecen como operaciones Git separadas.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

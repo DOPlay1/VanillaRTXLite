@@ -766,6 +766,39 @@ It validates normal Debug Off output, not future visible specular or reflection 
 
 ---
 
+### COMP-017 — v0.3.0-prealpha RC1 package and cold-start validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-017
+Date: 2026-08-03
+Project version: v0.3.0-prealpha release candidate 1
+Shader pack: VanillaRTXLite-v0.3.0-prealpha-rc1.zip
+Shader pack SHA-256: F72DF77F0838AEEAA4B500AC4E8A11F94A861BD7B7B6317F81D77FDE2541D98C
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Custom, 0 options changed for cold-start baseline and 1 option changed for Material Category
+Dimension: Overworld
+Scene or test: Clean candidate archive inspection, installation, shader-options access, Material Category check, and subsequent full application restart with Debug Off
+Result: Pass
+Support level: Experimental
+Known issues: Validation covers one Windows, NVIDIA, and Iris environment. Material transport remains terrain-only, and visible reflections are outside the Level 2 milestone.
+Notes: The candidate archive contained 27 forward-slash ZIP entries with the required shaders root, runtime entrypoints, shaders.properties, block mappings, README, MIT code license, and documentation license. It contained no Git metadata, development documentation tree, build directory, examples, or screenshots. The repository and installed copies had matching SHA-256 hashes. Iris opened the candidate settings and recreated the Overworld pipeline for Material Category without shader errors. On the subsequent full Minecraft restart, Iris selected the RC1 archive directly with Debug Off and zero changed options, the resource manager loaded only vanilla plus required Fabric, Iris, and Sodium resources, and the Overworld pipeline compiled successfully. The captured material lineup preserved the accepted default-resource baseline.
+```
+
+This entry accepts the clean RC1 archive as the validated package candidate for the Level 2 Material Core milestone.
+
+Promotion to integration or release branches and creation of the `v0.3.0-prealpha` tag remain separate Git operations.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
