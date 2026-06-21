@@ -8,8 +8,9 @@
 #define VRTX_DEBUG_REFLECTIVE_MASK 4
 #define VRTX_DEBUG_ROUGHNESS 5
 #define VRTX_DEBUG_FRESNEL_FACTOR 6
+#define VRTX_DEBUG_REFLECTION_WEIGHT 7
 
-#define VRTX_DEBUG_VIEW 0 // [0 1 2 3 4 5 6] Debug view mode
+#define VRTX_DEBUG_VIEW 0 // [0 1 2 3 4 5 6 7] Debug view mode
 
 #define VRTX_MATERIAL_UNKNOWN 0
 

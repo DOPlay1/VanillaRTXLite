@@ -2,10 +2,10 @@
 
 > A Vanilla+ RTX-like shader for Minecraft Java Edition using Iris/GLSL.
 
-**Current status:** Pre-alpha — Level 2 material core completed<br>
-**Current roadmap stage:** Level 2 — Material Core<br>
-**Next roadmap stage:** Level 3 — Selective Reflections<br>
-**Suggested milestone:** v0.3.0-prealpha<br>
+**Current status:** Alpha — Level 3 selective reflections in progress<br>
+**Current roadmap stage:** Level 3 — Selective Reflections<br>
+**Next roadmap stage:** Level 4 — Lighting System<br>
+**Suggested milestone:** v0.4.0-alpha<br>
 **Target Minecraft line:** 26.1.x<br>
 **Rendering backend:** OpenGL / GLSL via Iris<br>
 **v1.0.0 scope:** Overworld only  

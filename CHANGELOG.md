@@ -43,6 +43,10 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Recorded expanded approved-material coverage validation as `COMP-015`.
 - Recorded the default-resource Level 2 material lineup baseline as `COMP-016`.
 - Validated the clean `v0.3.0-prealpha-rc1` package and cold-start baseline as `COMP-017`.
+- Began Level 3 — Selective Reflections.
+- Added canonical reflectivity values for the approved water, glass, tinted glass, ice, and packed/blue ice material set.
+- Added a bounded material reflection weight helper combining permission, reflectivity, Fresnel response, and roughness attenuation without enabling visible reflections.
+- Added an internal Reflection Weight debug view for validating the Level 3 reflection gate.
 
 ### Fixed
 
@@ -59,14 +63,14 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Compatibility remains experimental.
 - Additional hand/item lighting, lightmap, and shadow handling are required before Level 1 can be considered visually clean.
 - Debug view modes are exposed for validation only and are not intended for normal gameplay.
-- Visible material-aware lighting, specular response, and reflection output are not implemented yet; Level 2 currently provides material data and debug validation.
-- Reflection logic is not implemented yet.
+- Visible material-aware lighting, specular response, and reflection output are not implemented yet; Level 3 currently adds only the bounded reflection coefficient and its debug validation path.
+- Visible reflection sampling, composition, and SSR are not implemented yet.
 
 ### Planned
 
-- Prepare and validate the `v0.3.0-prealpha` Material Core milestone.
-- Begin Level 3 — Selective Reflections after the milestone is accepted.
-- Add controlled reflection gating for approved water, glass, and ice materials.
+- Validate the initial Level 3 material reflection weight debug view.
+- Add a controlled reflection source and composition path for approved water, glass, and ice materials.
+- Prototype SSR only after material gating and fallback behavior are validated.
 
 ---
 

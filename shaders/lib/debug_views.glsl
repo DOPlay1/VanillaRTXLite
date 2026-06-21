@@ -72,6 +72,13 @@ vec3 applyFresnelFactorDebug(int materialId, float viewCosine) {
     return vec3(fresnelFactor);
 }
 
+vec3 applyReflectionWeightDebug(int materialId, float viewCosine) {
+    // Raw grayscale coefficient. No reflection source is sampled or displayed here.
+    float reflectionWeight = computeMaterialReflectionWeight(materialId, viewCosine);
+
+    return vec3(reflectionWeight);
+}
+
 vec3 applyDebugView(vec3 color, vec2 uv, int materialId, float viewCosine) {
     int mode = getDebugViewMode();
 
@@ -97,6 +104,10 @@ vec3 applyDebugView(vec3 color, vec2 uv, int materialId, float viewCosine) {
 
     if (mode == VRTX_DEBUG_FRESNEL_FACTOR) {
         return applyFresnelFactorDebug(materialId, viewCosine);
+    }
+
+    if (mode == VRTX_DEBUG_REFLECTION_WEIGHT) {
+        return applyReflectionWeightDebug(materialId, viewCosine);
     }
 
     return color;

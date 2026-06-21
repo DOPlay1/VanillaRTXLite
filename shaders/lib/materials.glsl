@@ -61,6 +61,31 @@ bool materialAllowsReflection(int materialId) {
     return false;
 }
 
+float getMaterialReflectivity(int materialId) {
+    if (materialId == VRTX_MATERIAL_WATER) {
+        return 0.70;
+    }
+
+    if (materialId == VRTX_MATERIAL_GLASS) {
+        return 0.45;
+    }
+
+    if (materialId == VRTX_MATERIAL_TINTED_GLASS) {
+        return 0.35;
+    }
+
+    if (materialId == VRTX_MATERIAL_ICE) {
+        return 0.55;
+    }
+
+    if (materialId == VRTX_MATERIAL_PACKED_BLUE_ICE) {
+        return 0.45;
+    }
+
+    // Reflection remains opt-in. Unknown and non-approved materials contribute nothing.
+    return 0.0;
+}
+
 float getMaterialBaseRoughness(int materialId) {
     if (materialId == VRTX_MATERIAL_DIRT_MATTE) {
         return 0.85;

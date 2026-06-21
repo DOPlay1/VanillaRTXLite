@@ -5,18 +5,18 @@
 Current stage:
 
 ```plaintext
-Level 2 — Material Core
-Maturity: Pre-alpha
-Status: Completed, pending milestone candidate validation and tag
-Suggested milestone: v0.3.0-prealpha
+Level 3 — Selective Reflections
+Maturity: Alpha
+Status: In progress
+Suggested milestone: v0.4.0-alpha
 ```
 
 Next stage:
 
 ```plaintext
-Level 3 — Selective Reflections
+Level 4 — Lighting System
 Maturity: Alpha
-Suggested milestone: v0.4.0-alpha
+Suggested milestone: v0.5.0-alpha
 ```
 
 ---
@@ -305,7 +305,7 @@ The priority is making sure the shader can distinguish between:
 ## 7. Level 3 — Selective Reflections
 
 ```plaintext
-Status: Planned
+Status: In progress
 Maturity: Alpha
 Suggested version: v0.4.0-alpha
 ```
@@ -319,12 +319,12 @@ Implement controlled reflections for approved materials only.
 - Water reflection logic
 - Glass reflection logic
 - Ice reflection logic
-- Reflection gating by material
-- Fresnel-based reflection modulation
-- Roughness-aware reflection response
+- Reflection gating by material (core coefficient implemented; visible output pending)
+- Fresnel-based reflection modulation (core coefficient implemented; tuning pending)
+- Roughness-aware reflection response (core coefficient implemented; tuning pending)
 - SSR prototype where appropriate
 - SSR fallback behavior
-- Reflection debug views
+- Reflection debug views (material reflection weight added; source/contribution views pending)
 - Lite/Balanced/Quality reflection differences
 
 ### Required rule
@@ -571,14 +571,14 @@ Future work may include:
 
 ## 13. Current Immediate Next Steps
 
-After Level 2 implementation closure:
+During Level 3 implementation:
 
-1. Align milestone documentation and remove obsolete placeholder claims.
-2. Build a clean `v0.3.0-prealpha` candidate archive.
-3. Validate candidate installation, shader options, Debug Off, and Material Category with default resources.
-4. Merge `feature/level-2-material-core` into `dev` after review.
-5. Promote the accepted milestone through `main` and create tag `v0.3.0-prealpha`.
-6. Start Level 3 — Selective Reflections from the updated integration branch.
+1. Validate the material reflection weight debug view on approved and protected materials.
+2. Add a controlled reflection source with a conservative fallback path.
+3. Compose visible reflections only after material permission, Fresnel, and roughness are verified together.
+4. Validate water, glass, ice, and matte stress scenes before expanding material coverage.
+5. Prototype SSR only after the bounded non-SSR path is stable.
+6. Define Lite, Balanced, and Quality differences without changing the project’s artistic direction.
 
 ---
 

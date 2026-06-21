@@ -8,6 +8,7 @@ varying vec2 texcoord;
 #include "/include/constants.glsl"
 #include "/lib/materials.glsl"
 #include "/lib/fresnel.glsl"
+#include "/lib/reflections.glsl"
 #include "/lib/color_pipeline.glsl"
 #include "/lib/debug_views.glsl"
 
