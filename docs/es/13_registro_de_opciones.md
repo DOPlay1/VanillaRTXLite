@@ -834,7 +834,7 @@ Muestra debug views internas del shader como categoría material, reflective mas
 | Categoría | Debug |
 | Tipo | Ciclo entero |
 | Valor por defecto | `0` |
-| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV, `3` Categoría material, `4` Máscara reflectiva, `5` Rugosidad, `6` Factor Fresnel |
+| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV, `3` Categoría material, `4` Máscara reflectiva, `5` Rugosidad, `6` Factor Fresnel, `7` Peso de reflexión |
 | Tier de costo | Low |
 | Impacto visual | Solo depuración |
 | Dependencias | Datos materiales de terreno y enrutamiento de debug en final pass |
@@ -844,13 +844,13 @@ Muestra debug views internas del shader como categoría material, reflective mas
 
 Propósito:
 
-`VRTX_DEBUG_VIEW` expone el enrutamiento debug compartido de Nivel 1 y Nivel 2 mediante las opciones de shader de Iris.
+`VRTX_DEBUG_VIEW` expone el enrutamiento debug compartido de Nivel 1 a Nivel 3 mediante las opciones de shader de Iris.
 
-Está pensado para validar el control del final pass, el enrutamiento de coordenadas UV de pantalla, las categorías materiales, el permiso de reflexión, la rugosidad base y la respuesta Fresnel acotada.
+Está pensado para validar el control del final pass, el enrutamiento de coordenadas UV de pantalla, las categorías materiales, el permiso de reflexión, la rugosidad base, la respuesta Fresnel acotada y el peso material combinado de reflexión.
 
 Esta opción debe permanecer desactivada por defecto.
 
-Los modos Categoría material, Máscara reflectiva, Rugosidad y Factor Fresnel consumen el buffer material inicial de terreno de Nivel 2. El mapeo cubre intencionalmente solo un conjunto conservador de bloques vanilla. El terreno no mapeado y la geometría no soportada permanecen como desconocidos y usan fallbacks no reflectivos, totalmente rugosos y con Fresnel cero.
+Los modos Categoría material, Máscara reflectiva, Rugosidad, Factor Fresnel y Peso de reflexión consumen el buffer material inicial de terreno. Peso de reflexión muestra el producto acotado del permiso material, la reflectividad canónica, la respuesta Fresnel y la atenuación por rugosidad; no muestrea ni activa reflejos visibles. El mapeo cubre intencionalmente solo un conjunto conservador de bloques vanilla. El terreno no mapeado y la geometría no soportada permanecen como desconocidos y usan fallbacks no reflectivos, totalmente rugosos y con Fresnel cero.
 
 ---
 
