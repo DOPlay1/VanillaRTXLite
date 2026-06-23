@@ -799,6 +799,39 @@ La promoción hacia ramas de integración o release y la creación del tag `v0.3
 
 ---
 
+### COMP-018 — Validación de la vista de peso material de reflexión en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-018
+Fecha: 2026-08-05
+Versión del proyecto: Desarrollo de v0.4.0-alpha
+Shader pack: VanillaRTXLite-Level3-ReflectionWeight-Test-corrected.zip
+SHA-256 del shader pack: 94552FD7B0C75A1E73D8B6EA0A7CB23010E1A2FF5B858FF4C40509D520715D37
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Custom, alternando entre 0 opciones modificadas para Debug apagado y 1 opción modificada para Peso de reflexión
+Dimensión: Overworld
+Escena o prueba: Alineación de materiales aprobados observada en ángulo rasante con Peso de reflexión activado, seguida por la restauración de Debug apagado
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: El archivo de prueba inicial usó entradas ZIP con backslash de Windows e Iris lo rechazó antes de compilar el shader. El archivo corregido contiene entradas con forward slash. El transporte material continúa limitado al terreno, el coeficiente crudo es intencionalmente oscuro en ángulos frontales y todavía no se implementan muestreo de reflejos visibles, composición ni SSR.
+Notas: Iris seleccionó el archivo corregido y recreó seis veces el pipeline del Overworld mientras el usuario alternaba la opción de depuración. El log registró tres sesiones con una opción modificada y dos sesiones posteriores con Debug apagado, sin errores de compilación, enlace, programa inválido ni carga del paquete corregido. La captura de Peso de reflexión mostró respuesta gris acotada en superficies reflectivas aprobadas, mientras los materiales no aprobados y el terreno mate protegido permanecieron negros. La recreación del pipeline con Debug apagado también quedó confirmada en el log.
+```
+
+Esta entrada valida el coeficiente material acotado de reflexión de Nivel 3 y su ruta de depuración.
+
+No valida reflejos visibles, una fuente de reflejos, composición de reflejos ni SSR.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

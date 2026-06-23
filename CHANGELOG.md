@@ -47,6 +47,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Added canonical reflectivity values for the approved water, glass, tinted glass, ice, and packed/blue ice material set.
 - Added a bounded material reflection weight helper combining permission, reflectivity, Fresnel response, and roughness attenuation without enabling visible reflections.
 - Added an internal Reflection Weight debug view for validating the Level 3 reflection gate.
+- Recorded corrected-package and material reflection weight debug validation as `COMP-018`.
 
 ### Fixed
 
@@ -68,8 +69,7 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 
 ### Planned
 
-- Validate the initial Level 3 material reflection weight debug view.
-- Add a controlled reflection source and composition path for approved water, glass, and ice materials.
+- Add a controlled reflection source and composition path for approved water, glass, and ice materials using the validated material reflection weight.
 - Prototype SSR only after material gating and fallback behavior are validated.
 
 ---

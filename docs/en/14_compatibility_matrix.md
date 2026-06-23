@@ -799,6 +799,39 @@ Promotion to integration or release branches and creation of the `v0.3.0-prealph
 
 ---
 
+### COMP-018 — Material reflection weight debug validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-018
+Date: 2026-08-05
+Project version: v0.4.0-alpha development
+Shader pack: VanillaRTXLite-Level3-ReflectionWeight-Test-corrected.zip
+Shader pack SHA-256: 94552FD7B0C75A1E73D8B6EA0A7CB23010E1A2FF5B858FF4C40509D520715D37
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Custom, alternating between 0 options changed for Debug Off and 1 option changed for Reflection Weight
+Dimension: Overworld
+Scene or test: Approved-material lineup viewed at a grazing angle with Reflection Weight enabled, followed by Debug Off restoration
+Result: Pass
+Support level: Experimental
+Known issues: The initial test archive used Windows backslash ZIP entries and Iris rejected it before shader compilation. The corrected archive contains forward-slash entries. Material transport remains terrain-only, the raw coefficient is intentionally dark at frontal angles, and visible reflection sampling, composition, and SSR are not implemented.
+Notes: Iris selected the corrected archive and recreated the Overworld pipeline six times while the user alternated the debug option. The log recorded three sessions with one changed option and two subsequent Debug Off sessions, with no shader compilation, link, invalid-program, or corrected-pack load errors. The captured Reflection Weight view showed bounded grayscale response on approved reflective surfaces while non-approved materials and protected matte terrain remained black. Debug Off pipeline recreation was also confirmed in the log.
+```
+
+This entry validates the bounded Level 3 material reflection coefficient and its debug route.
+
+It does not validate visible reflections, a reflection source, reflection composition, or SSR.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
