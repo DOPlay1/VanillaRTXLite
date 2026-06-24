@@ -14,12 +14,12 @@ varying vec2 texcoord;
 varying vec2 lightmapCoord;
 varying vec4 vertexColor;
 varying vec3 viewPosition;
-#if VRTX_DEBUG_VIEW >= VRTX_DEBUG_MATERIAL_CATEGORY
+#if VRTX_MATERIAL_DATA_ENABLED == 1
 varying vec3 viewNormal;
 varying float materialId;
 #endif
 
-#if VRTX_DEBUG_VIEW >= VRTX_DEBUG_MATERIAL_CATEGORY
+#if VRTX_MATERIAL_DATA_ENABLED == 1
 /* RENDERTARGETS: 0,4 */
 #else
 /* RENDERTARGETS: 0 */
@@ -39,7 +39,7 @@ float computeVanillaFogFactor(float viewDistance) {
     return clamp((fogEnd - viewDistance) / fogRange, 0.0, 1.0);
 }
 
-#if VRTX_DEBUG_VIEW >= VRTX_DEBUG_MATERIAL_CATEGORY
+#if VRTX_MATERIAL_DATA_ENABLED == 1
 float encodeMaterialId(float rawMaterialId) {
     if (rawMaterialId < 0.0) {
         return 0.0;
@@ -79,7 +79,7 @@ void main() {
 
     gl_FragData[0] = albedo;
 
-#if VRTX_DEBUG_VIEW >= VRTX_DEBUG_MATERIAL_CATEGORY
+#if VRTX_MATERIAL_DATA_ENABLED == 1
     float encodedMaterialId = encodeMaterialId(materialId);
     float viewCosine = computeViewCosine(viewNormal, viewPosition);
 

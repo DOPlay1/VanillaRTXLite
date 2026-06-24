@@ -48,6 +48,8 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Added a bounded material reflection weight helper combining permission, reflectivity, Fresnel response, and roughness attenuation without enabling visible reflections.
 - Added an internal Reflection Weight debug view for validating the Level 3 reflection gate.
 - Recorded corrected-package and material reflection weight debug validation as `COMP-018`.
+- Added the first visible Level 3 reflection composition path using a restrained sky/environment fallback on approved water, glass, and ice materials.
+- Added an internal Reflection Contribution debug view for isolating the bounded environment term.
 
 ### Fixed
 
@@ -64,13 +66,13 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Compatibility remains experimental.
 - Additional hand/item lighting, lightmap, and shadow handling are required before Level 1 can be considered visually clean.
 - Debug view modes are exposed for validation only and are not intended for normal gameplay.
-- Visible material-aware lighting, specular response, and reflection output are not implemented yet; Level 3 currently adds only the bounded reflection coefficient and its debug validation path.
-- Visible reflection sampling, composition, and SSR are not implemented yet.
+- Material-aware lighting, specular response, and SSR are not implemented yet.
+- The initial visible reflection path is an inexpensive sky/environment approximation; it does not reproduce screen-space objects or terrain.
 
 ### Planned
 
-- Add a controlled reflection source and composition path for approved water, glass, and ice materials using the validated material reflection weight.
-- Prototype SSR only after material gating and fallback behavior are validated.
+- Validate and tune the controlled sky/environment reflection fallback across approved water, glass, and ice materials.
+- Prototype SSR only after material gating, composition, and fallback behavior are validated.
 
 ---
 

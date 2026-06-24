@@ -2,7 +2,7 @@
 
 #include "/include/constants.glsl"
 
-#if VRTX_DEBUG_VIEW >= VRTX_DEBUG_MATERIAL_CATEGORY
+#if VRTX_MATERIAL_DATA_ENABLED == 1
 attribute vec2 mc_Entity;
 #endif
 
@@ -10,7 +10,7 @@ varying vec2 texcoord;
 varying vec2 lightmapCoord;
 varying vec4 vertexColor;
 varying vec3 viewPosition;
-#if VRTX_DEBUG_VIEW >= VRTX_DEBUG_MATERIAL_CATEGORY
+#if VRTX_MATERIAL_DATA_ENABLED == 1
 varying vec3 viewNormal;
 varying float materialId;
 #endif
@@ -24,7 +24,7 @@ void main() {
     lightmapCoord = (gl_TextureMatrix[1] * gl_MultiTexCoord1).xy;
     vertexColor = gl_Color;
     viewPosition = vertexViewPosition.xyz;
-#if VRTX_DEBUG_VIEW >= VRTX_DEBUG_MATERIAL_CATEGORY
+#if VRTX_MATERIAL_DATA_ENABLED == 1
     viewNormal = normalize(gl_NormalMatrix * gl_Normal);
 
     // mc_Entity.x is assigned by block.properties. Iris reports -1 for

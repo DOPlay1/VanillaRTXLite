@@ -2,10 +2,12 @@
 
 uniform sampler2D colortex0;
 uniform sampler2D colortex4;
+uniform vec3 skyColor;
 
 varying vec2 texcoord;
 
 #include "/include/constants.glsl"
+#include "/profiles/balanced.glsl"
 #include "/lib/materials.glsl"
 #include "/lib/fresnel.glsl"
 #include "/lib/reflections.glsl"
@@ -14,7 +16,7 @@ varying vec2 texcoord;
 
 void main() {
     vec3 color = texture2D(colortex0, texcoord).rgb;
-#if VRTX_DEBUG_VIEW >= VRTX_DEBUG_MATERIAL_CATEGORY
+#if VRTX_MATERIAL_DATA_ENABLED == 1
     vec4 materialData = texture2D(colortex4, texcoord);
 
     int materialId = int(floor(materialData.r * 255.0 + 0.5));
@@ -25,7 +27,7 @@ void main() {
 #endif
 
     color = applyBaselineColorPipeline(color);
-    color = applyDebugView(color, texcoord, materialId, viewCosine);
+    color = applyDebugView(color, texcoord, skyColor, materialId, viewCosine);
 
     gl_FragColor = vec4(color, 1.0);
 }

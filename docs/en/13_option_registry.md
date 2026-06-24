@@ -834,7 +834,7 @@ Shows internal shader debug views such as material category, reflective mask, ro
 | Category | Debug |
 | Type | Integer cycle |
 | Default | `0` |
-| Values | `0` Off, `1` Final Pass Marker, `2` UV Gradient, `3` Material Category, `4` Reflective Mask, `5` Roughness, `6` Fresnel Factor, `7` Reflection Weight |
+| Values | `0` Off, `1` Final Pass Marker, `2` UV Gradient, `3` Material Category, `4` Reflective Mask, `5` Roughness, `6` Fresnel Factor, `7` Reflection Weight, `8` Reflection Contribution |
 | Cost tier | Low |
 | Visual impact | Debug-only |
 | Dependencies | Terrain material data and final pass debug routing |
@@ -846,11 +846,11 @@ Purpose:
 
 `VRTX_DEBUG_VIEW` exposes the shared Level 1 through Level 3 debug routing through Iris shader settings.
 
-It is intended to validate final-pass control, screen-space UV routing, material categories, reflective permission, base roughness, bounded Fresnel response, and the combined material reflection weight.
+It is intended to validate final-pass control, screen-space UV routing, material categories, reflective permission, base roughness, bounded Fresnel response, the combined material reflection weight, and the controlled environment contribution.
 
 This option must remain disabled by default.
 
-The Material Category, Reflective Mask, Roughness, Fresnel Factor, and Reflection Weight modes consume the initial terrain material buffer. Reflection Weight displays the bounded product of material permission, canonical reflectivity, Fresnel response, and roughness attenuation; it does not sample or enable visible reflections. The mapping intentionally covers only a conservative set of vanilla blocks. Unmapped terrain and unsupported geometry remain unknown and use non-reflective, fully rough, zero-Fresnel fallbacks.
+The Material Category, Reflective Mask, Roughness, Fresnel Factor, Reflection Weight, and Reflection Contribution modes consume the initial terrain material buffer. Reflection Weight displays the bounded product of material permission, canonical reflectivity, Fresnel response, and roughness attenuation. Reflection Contribution displays the scaled sky/environment fallback term used by the first visible Level 3 composition path. The mapping intentionally covers only a conservative set of vanilla blocks. Unmapped terrain and unsupported geometry remain unknown and use non-reflective, fully rough, zero-Fresnel fallbacks.
 
 ---
 

@@ -79,7 +79,22 @@ vec3 applyReflectionWeightDebug(int materialId, float viewCosine) {
     return vec3(reflectionWeight);
 }
 
-vec3 applyDebugView(vec3 color, vec2 uv, int materialId, float viewCosine) {
+vec3 applyReflectionContributionDebug(
+    vec3 skyColor,
+    int materialId,
+    float viewCosine
+) {
+    // Displays the actual bounded environment term before scene composition.
+    return computeEnvironmentReflectionContribution(skyColor, materialId, viewCosine);
+}
+
+vec3 applyDebugView(
+    vec3 color,
+    vec2 uv,
+    vec3 skyColor,
+    int materialId,
+    float viewCosine
+) {
     int mode = getDebugViewMode();
 
     if (mode == VRTX_DEBUG_FINAL_PASS_MARKER) {
@@ -108,6 +123,10 @@ vec3 applyDebugView(vec3 color, vec2 uv, int materialId, float viewCosine) {
 
     if (mode == VRTX_DEBUG_REFLECTION_WEIGHT) {
         return applyReflectionWeightDebug(materialId, viewCosine);
+    }
+
+    if (mode == VRTX_DEBUG_REFLECTION_CONTRIBUTION) {
+        return applyReflectionContributionDebug(skyColor, materialId, viewCosine);
     }
 
     return color;

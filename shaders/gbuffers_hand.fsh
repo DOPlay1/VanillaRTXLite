@@ -7,7 +7,7 @@ varying vec2 texcoord;
 varying vec2 lightmapCoord;
 varying vec4 vertexColor;
 
-/* RENDERTARGETS: 0 */
+/* RENDERTARGETS: 0,4 */
 
 void main() {
     vec4 albedo = texture2D(texture, texcoord) * vertexColor;
@@ -23,4 +23,8 @@ void main() {
     albedo.rgb *= lightmapColor;
 
     gl_FragData[0] = albedo;
+
+    // The hand is unsupported by the material system and must clear any
+    // terrain material data behind it before composite reflection routing.
+    gl_FragData[1] = vec4(0.0, 1.0, 0.0, 1.0);
 }
