@@ -832,6 +832,39 @@ No valida reflejos visibles, una fuente de reflejos, composición de reflejos ni
 
 ---
 
+### COMP-019 — Validación del fallback ambiental de reflexión en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-019
+Fecha: 2026-08-05
+Versión del proyecto: Desarrollo de v0.4.0-alpha
+Shader pack: VanillaRTXLite-Level3-EnvironmentReflection-Test.zip
+SHA-256 del shader pack: D15DA7CDF8282A173EF09492C62C211FABA867CE01C06070FDB6D70FAD17B903
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Baseline interno Balanced, alternando entre Debug apagado y Contribución de reflexión
+Dimensión: Overworld
+Escena o prueba: Alineación diurna de playa y lago con agua, vidrio, variantes de hielo, amatista, arena y terreno mate circundante
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: La fuente ambiental es una aproximación contenida del color del cielo y no reproduce objetos en screen space, terreno, oclusión ni SSR. La salida debug de contribución es intencionalmente muy oscura en ángulos frontales. El transporte material continúa limitado a rutas de terreno soportadas, con un fallback conservador para la mano.
+Notas: Iris seleccionó el paquete y creó siete veces el pipeline del Overworld durante los cambios de opción, sin errores de compilación, enlace, programa inválido ni carga para este archivo. Las capturas con Debug apagado conservaron materiales vanilla legibles, mientras las capturas de Contribución de reflexión aislaron una contribución fría tenue en superficies aprobadas de agua, vidrio y hielo. La arena, vegetación, amatista y demás materiales no aprobados o mate no recibieron la contribución de reflexión.
+```
+
+Esta entrada valida el primer fallback visible de cielo/entorno del Nivel 3, su ruta acotada de composición y su vista debug de contribución.
+
+No valida SSR, reflejos de objetos en screen space, ajuste final de reflejos, respuesta bajo lluvia ni rendimiento en GPU adicionales.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:

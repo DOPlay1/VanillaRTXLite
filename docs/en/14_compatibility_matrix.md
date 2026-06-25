@@ -832,6 +832,39 @@ It does not validate visible reflections, a reflection source, reflection compos
 
 ---
 
+### COMP-019 — Environment reflection fallback validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-019
+Date: 2026-08-05
+Project version: v0.4.0-alpha development
+Shader pack: VanillaRTXLite-Level3-EnvironmentReflection-Test.zip
+Shader pack SHA-256: D15DA7CDF8282A173EF09492C62C211FABA867CE01C06070FDB6D70FAD17B903
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Balanced internal baseline, alternating between Debug Off and Reflection Contribution
+Dimension: Overworld
+Scene or test: Daytime beach and lake lineup containing water, glass, ice variants, amethyst, sand, and surrounding matte terrain
+Result: Pass
+Support level: Experimental
+Known issues: The environment source is a restrained sky-color approximation and does not reproduce screen-space objects, terrain, occlusion, or SSR. The contribution debug output is intentionally very dark at frontal angles. Material transport remains limited to supported terrain paths, with a conservative hand fallback.
+Notes: Iris selected the package and created the Overworld pipeline seven times during option changes, with no shader compilation, link, invalid-program, or package-load errors for this archive. Debug Off captures preserved readable vanilla materials while the Reflection Contribution captures isolated a faint cool contribution on approved water, glass, and ice surfaces. Sand, vegetation, amethyst, and other non-approved or matte materials did not receive the reflection contribution.
+```
+
+This entry validates the first visible Level 3 sky/environment fallback, its bounded composite path, and its contribution debug route.
+
+It does not validate SSR, screen-space object reflections, final reflection tuning, rain response, or performance across additional GPUs.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:
