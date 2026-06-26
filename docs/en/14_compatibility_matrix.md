@@ -865,6 +865,39 @@ It does not validate SSR, screen-space object reflections, final reflection tuni
 
 ---
 
+### COMP-020 — Environment reflection fallback weather and time validation on Minecraft 26.1.2
+
+```plaintext
+ID: COMP-020
+Date: 2026-08-06
+Project version: v0.4.0-alpha development
+Shader pack: VanillaRTXLite-Level3-EnvironmentReflection-Test.zip
+Shader pack SHA-256: D15DA7CDF8282A173EF09492C62C211FABA867CE01C06070FDB6D70FAD17B903
+Minecraft version: 26.1.2
+Loader: Fabric Loader 0.18.6
+Iris version: 1.10.9+mc26.1.1
+Sodium version: 0.8.9+mc26.1.1
+Java version: Java 25
+Operating system: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolution: 1920x1080
+Preset/Profile: Balanced internal baseline, alternating between Debug Off and Reflection Contribution
+Dimension: Overworld
+Scene or test: Fixed water, glass, ice, and matte-terrain lineup at sunset, midnight, and during rain
+Result: Pass
+Support level: Experimental
+Known issues: The fallback becomes nearly black at sunset, midnight, and under dark rain because it directly follows the low-luminance Iris sky color. This conservative response prevents false night brightness but may require later artistic tuning. It remains a flat environment approximation without SSR, scene objects, terrain, occlusion, wetness, or rain-specific reflection logic.
+Notes: The session recorded five complete Reflection Contribution to Debug Off option cycles. Each change recreated the Overworld pipeline for the expected package without shader compilation, link, invalid-program, or package-load errors. Normal captures remained readable across all three conditions. Contribution captures darkened consistently with the environment and stayed confined to approved reflective surfaces; protected matte terrain did not acquire reflection output.
+```
+
+This entry validates conservative time-of-day and rain behavior for the initial Level 3 environment fallback.
+
+It does not validate rain wetness, SSR, final low-light tuning, animated water normals, or performance across additional GPUs.
+
+---
+
 ## 19. Known Compatibility Risks
 
 Known compatibility risk areas:

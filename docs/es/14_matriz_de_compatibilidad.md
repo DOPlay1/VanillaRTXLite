@@ -865,6 +865,39 @@ No valida SSR, reflejos de objetos en screen space, ajuste final de reflejos, re
 
 ---
 
+### COMP-020 — Validación por clima y hora del fallback ambiental de reflexión en Minecraft 26.1.2
+
+```plaintext
+ID: COMP-020
+Fecha: 2026-08-06
+Versión del proyecto: Desarrollo de v0.4.0-alpha
+Shader pack: VanillaRTXLite-Level3-EnvironmentReflection-Test.zip
+SHA-256 del shader pack: D15DA7CDF8282A173EF09492C62C211FABA867CE01C06070FDB6D70FAD17B903
+Versión de Minecraft: 26.1.2
+Loader: Fabric Loader 0.18.6
+Versión de Iris: 1.10.9+mc26.1.1
+Versión de Sodium: 0.8.9+mc26.1.1
+Versión de Java: Java 25
+Sistema operativo: Windows 11
+GPU: NVIDIA GeForce RTX 3070 Ti
+Driver: NVIDIA 610.88
+OpenGL: 3.3.0
+Resolución: 1920x1080
+Preset/Profile: Baseline interno Balanced, alternando entre Debug apagado y Contribución de reflexión
+Dimensión: Overworld
+Escena o prueba: Alineación fija de agua, vidrio, hielo y terreno mate al atardecer, a medianoche y durante lluvia
+Resultado: Pass
+Nivel de soporte: Experimental
+Problemas conocidos: El fallback se vuelve casi negro al atardecer, a medianoche y bajo lluvia oscura porque sigue directamente el color de cielo de baja luminancia de Iris. Esta respuesta conservadora evita brillo nocturno falso, pero puede requerir ajuste artístico posterior. Continúa siendo una aproximación ambiental plana sin SSR, objetos de escena, terreno, oclusión, humedad ni lógica de reflexión específica para lluvia.
+Notas: La sesión registró cinco ciclos completos de Contribución de reflexión a Debug apagado. Cada cambio recreó el pipeline del Overworld para el paquete esperado sin errores de compilación, enlace, programa inválido ni carga. Las capturas normales permanecieron legibles en las tres condiciones. Las capturas de contribución se oscurecieron de forma consistente con el entorno y permanecieron limitadas a superficies reflectivas aprobadas; el terreno mate protegido no adquirió salida de reflexión.
+```
+
+Esta entrada valida el comportamiento conservador por hora del día y lluvia del fallback ambiental inicial del Nivel 3.
+
+No valida humedad por lluvia, SSR, ajuste final en baja luz, normales animadas del agua ni rendimiento en GPU adicionales.
+
+---
+
 ## 19. Riesgos Conocidos de Compatibilidad
 
 Áreas conocidas de riesgo de compatibilidad:
