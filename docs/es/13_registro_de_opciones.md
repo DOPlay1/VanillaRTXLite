@@ -834,7 +834,7 @@ Muestra debug views internas del shader como categoría material, reflective mas
 | Categoría | Debug |
 | Tipo | Ciclo entero |
 | Valor por defecto | `0` |
-| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV, `3` Categoría material, `4` Máscara reflectiva, `5` Rugosidad, `6` Factor Fresnel, `7` Peso de reflexión, `8` Contribución de reflexión |
+| Valores | `0` Apagado, `1` Marcador de final pass, `2` Gradiente UV, `3` Categoría material, `4` Máscara reflectiva, `5` Rugosidad, `6` Factor Fresnel, `7` Peso de reflexión, `8` Contribución de reflexión, `9` Estado del trazado SSR |
 | Tier de costo | Low |
 | Impacto visual | Solo depuración |
 | Dependencias | Datos materiales de terreno y enrutamiento de debug en final pass |
@@ -846,11 +846,11 @@ Propósito:
 
 `VRTX_DEBUG_VIEW` expone el enrutamiento debug compartido de Nivel 1 a Nivel 3 mediante las opciones de shader de Iris.
 
-Está pensado para validar el control del final pass, el enrutamiento de coordenadas UV de pantalla, las categorías materiales, el permiso de reflexión, la rugosidad base, la respuesta Fresnel acotada, el peso material combinado de reflexión y la contribución ambiental controlada.
+Está pensado para validar el control del final pass, el enrutamiento de coordenadas UV de pantalla, las categorías materiales, el permiso de reflexión, la rugosidad base, la respuesta Fresnel acotada, el peso material combinado de reflexión, la contribución ambiental controlada y el estado del trazado SSR exclusivo para validación.
 
 Esta opción debe permanecer desactivada por defecto.
 
-Los modos Categoría material, Máscara reflectiva, Rugosidad, Factor Fresnel, Peso de reflexión y Contribución de reflexión consumen el buffer material inicial de terreno. Peso de reflexión muestra el producto acotado del permiso material, la reflectividad canónica, la respuesta Fresnel y la atenuación por rugosidad. Contribución de reflexión muestra el término escalado de fallback de cielo/entorno empleado por la primera ruta visible de composición del Nivel 3. El mapeo cubre intencionalmente solo un conjunto conservador de bloques vanilla. El terreno no mapeado y la geometría no soportada permanecen como desconocidos y usan fallbacks no reflectivos, totalmente rugosos y con Fresnel cero.
+Los modos Categoría material, Máscara reflectiva, Rugosidad, Factor Fresnel, Peso de reflexión, Contribución de reflexión y Estado del trazado SSR consumen el buffer material inicial de terreno. Peso de reflexión muestra el producto acotado del permiso material, la reflectividad canónica, la respuesta Fresnel y la atenuación por rugosidad. Contribución de reflexión muestra el término escalado de fallback de cielo/entorno empleado por la primera ruta visible de composición del Nivel 3. Estado del trazado SSR ejecuta un trazado diagnóstico acotado solo sobre materiales reflectivos aprobados: negro indica no elegible, verde un impacto de profundidad, azul ningún impacto dentro del presupuesto, rojo salida de pantalla y amarillo profundidad de fondo inválida. La salida SSR no se compone en el gameplay normal. El mapeo cubre intencionalmente solo un conjunto conservador de bloques vanilla. El terreno no mapeado y la geometría no soportada permanecen como desconocidos y usan fallbacks no reflectivos, totalmente rugosos y con Fresnel cero.
 
 ---
 

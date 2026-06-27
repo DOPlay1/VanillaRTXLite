@@ -322,9 +322,9 @@ Implement controlled reflections for approved materials only.
 - Reflection gating by material (core coefficient implemented; visible output pending)
 - Fresnel-based reflection modulation (core coefficient implemented; tuning pending)
 - Roughness-aware reflection response (core coefficient implemented; tuning pending)
-- SSR prototype where appropriate
+- SSR prototype where appropriate (trace-status debug prototype implemented; visual composition pending)
 - SSR fallback behavior
-- Reflection debug views (material reflection weight added; source/contribution views pending)
+- Reflection debug views (material weight, environment contribution, and SSR trace status implemented; validation pending)
 - Lite/Balanced/Quality reflection differences
 
 ### Required rule

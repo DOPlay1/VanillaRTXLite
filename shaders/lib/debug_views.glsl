@@ -93,7 +93,8 @@ vec3 applyDebugView(
     vec2 uv,
     vec3 skyColor,
     int materialId,
-    float viewCosine
+    float viewCosine,
+    vec3 viewNormal
 ) {
     int mode = getDebugViewMode();
 
@@ -128,6 +129,12 @@ vec3 applyDebugView(
     if (mode == VRTX_DEBUG_REFLECTION_CONTRIBUTION) {
         return applyReflectionContributionDebug(skyColor, materialId, viewCosine);
     }
+
+#if VRTX_DEBUG_VIEW == VRTX_DEBUG_SSR_TRACE_STATUS
+    if (mode == VRTX_DEBUG_SSR_TRACE_STATUS) {
+        return traceSsrDebugStatus(uv, materialId, viewNormal);
+    }
+#endif
 
     return color;
 }

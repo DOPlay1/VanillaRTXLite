@@ -52,6 +52,8 @@ The format is inspired by Keep a Changelog, but adapted to the project’s docum
 - Added an internal Reflection Contribution debug view for isolating the bounded environment term.
 - Recorded environment reflection fallback and contribution debug validation as `COMP-019`.
 - Recorded sunset, midnight, and rain validation for the environment reflection fallback as `COMP-020`.
+- Added octahedral view-normal transport in the existing material buffer without allocating another color target.
+- Added a bounded, material-gated SSR trace-status prototype that remains isolated from normal gameplay output.
 
 ### Fixed
 

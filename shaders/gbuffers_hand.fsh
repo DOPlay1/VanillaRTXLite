@@ -26,5 +26,5 @@ void main() {
 
     // The hand is unsupported by the material system and must clear any
     // terrain material data behind it before composite reflection routing.
-    gl_FragData[1] = vec4(0.0, 1.0, 0.0, 1.0);
+    gl_FragData[1] = vec4(0.0, 1.0, 0.5, 0.5);
 }

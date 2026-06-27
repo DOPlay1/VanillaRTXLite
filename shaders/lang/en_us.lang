@@ -10,3 +10,4 @@ value.VRTX_DEBUG_VIEW.5=Roughness
 value.VRTX_DEBUG_VIEW.6=Fresnel Factor
 value.VRTX_DEBUG_VIEW.7=Reflection Weight
 value.VRTX_DEBUG_VIEW.8=Reflection Contribution
+value.VRTX_DEBUG_VIEW.9=SSR Trace Status

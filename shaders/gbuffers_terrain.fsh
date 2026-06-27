@@ -1,6 +1,7 @@
 #version 120
 
 #include "/include/constants.glsl"
+#include "/lib/normals.glsl"
 
 uniform sampler2D texture;
 uniform sampler2D lightmap;
@@ -82,7 +83,8 @@ void main() {
 #if VRTX_MATERIAL_DATA_ENABLED == 1
     float encodedMaterialId = encodeMaterialId(materialId);
     float viewCosine = computeViewCosine(viewNormal, viewPosition);
+    vec2 encodedViewNormal = encodeOctahedralNormal(viewNormal);
 
-    gl_FragData[1] = vec4(encodedMaterialId, viewCosine, 0.0, 1.0);
+    gl_FragData[1] = vec4(encodedMaterialId, viewCosine, encodedViewNormal);
 #endif
 }

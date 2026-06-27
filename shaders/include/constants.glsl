@@ -10,8 +10,9 @@
 #define VRTX_DEBUG_FRESNEL_FACTOR 6
 #define VRTX_DEBUG_REFLECTION_WEIGHT 7
 #define VRTX_DEBUG_REFLECTION_CONTRIBUTION 8
+#define VRTX_DEBUG_SSR_TRACE_STATUS 9
 
-#define VRTX_DEBUG_VIEW 0 // [0 1 2 3 4 5 6 7 8] Debug view mode
+#define VRTX_DEBUG_VIEW 0 // [0 1 2 3 4 5 6 7 8 9] Debug view mode
 
 // Level 3 baseline: controlled environment reflections on approved materials.
 #define VRTX_ENVIRONMENT_REFLECTIONS_ENABLED 1
